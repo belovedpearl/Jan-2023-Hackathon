@@ -9,17 +9,98 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-    <title>Document</title>
+    <title>Penny Smart</title>
 </head>
-<body>
-    <!-- Andres and Rashidat to code HTML here -->
-    <!-- Materialise - http://archives.materializecss.com/0.100.2/getting-started.html -->
-    <p>hello</p>
-    <p>Hello from Adam</p>
-    <p>Hello from Destan</p>
-    <p>Hello from Rhys</p>
-    <p>Hello from Rashidat</p>
-    <p>Hello from Oluwaseun</p>
-    <p>Hello from Cara</p>
+
+<body id="index-body">
+  <!-- Andres and Rashidat to code HTML here -->
+  <!-- Materialise - http://archives.materializecss.com/0.100.2/getting-started.html -->
+
+
+  <header>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo">Penny Smart</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li><a href="index.html">Login|Sign uP</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <h1 class="heading"></h1>
+
+    <p class="heading">
+      Peace of mind life-style budgeting.
+    </p>
+  </header>
+
+  <main>
+
+    <div class="progress">
+      <div class="determinate blue" style="width: 20%; animation: grow 2s">Progress</div>
+    </div>
+
+    <div class="row">
+      <div class="col s12 m7">
+        <div class="card horizontal blue-grey darken-1">
+          <div class="card-content white-text">
+            <i class="medium material-icons">attach_money</i>
+            <p>How much would you like to save?</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Toggle switch -->
+    <div class="switch">
+      <label>
+        Day
+        <input type="checkbox">
+        <span class="lever"></span>
+        Month
+      </label>
+    </div>
+    </div>
+
+    <input type="text" id="user-input" name="user-input" placeholder="Please Enter Amount" aria-label="user-input"
+      required>
+    </div>
+    <br>
+
+    <!-- Proceed button to next question -->
+    <a class="waves-effect waves-light btn">Next</a>
+
+    <br>
+    <br>
+
+    <section class="time">
+      <div class="progress">
+        <div class="determinate blue" style="width: 50%; animation: grow 2s">Progress</div>
+      </div>
+
+      <div>How much time do you have?
+        <a class="dropdown-button" href="#!" data-activates="dropdown1">Currency<i
+            class="material-icons right">arrow_drop_down</i></a></li>
+
+        <!-- <a class='dropdown-button btn' data-beloworigin="true" href='#' data-activates='dropdown-list'>Currency</a> -->
+        <!-- Dropdown Structure -->
+        <ul id="dropdown1" class="dropdown-content">
+          <li><a href="#!">Dollar</a></li>
+          <li><a href="#!">Pound</a></li>
+          <li class="divider"></li>
+          <li><a href="#!"></a>Euro</li>
+        </ul>
+
+      </div>
+      <input type="text" id="user-amount" name="user-input" placeholder="Enter Amount" aria-label="user-amount"
+        required>
+
+      <br>
+      <a class="waves-effect waves-light btn">Next</a>
+    </section>
+  
+    </main>
+
 </body>
+
 </html>
