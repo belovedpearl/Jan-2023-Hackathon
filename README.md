@@ -73,22 +73,21 @@ Our target audience would be those predominantly feeling the pinch, as a result 
 
 ##### Wireframe 1 description: 
 
-![](Wireframes/how-much-would-you-like-to-save_.png)
+![question-1](Wireframes/question-1.png)
 
-![](Wireframes/how-much-time-do-you-have_.png)
+![question-2](Wireframes/question-2.png)
 
-![](Wireframes/questions-example-layout-1.png)
+![question-3](Wireframes/question-3.png)
 
-![](Wireframes/questions-example-layout-2.png)
+![question-4](Wireframes/question-4.png)
+![question-5](Wireframes/question-5.png)
+![question-6](Wireframes/question-6.png)
+![question-7](Wireframes/question-7.png)
 
-![](Wireframes/final-landing-place.png)
+
+![final-output](Wireframes/final-output.png)
 
 
-### Final Wireframes
-
----
-
-![](https://github.com/AdamBoley/Jan-2023-Hackathon/blob/main/Wireframes/final-landing-page.png?raw=true)
 
 ## Features
 
