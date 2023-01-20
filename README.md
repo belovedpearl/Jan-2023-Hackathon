@@ -49,19 +49,26 @@ Initially the user will sign up to the application and take a personality test, 
 
 ### Concept 
 
+The project seeks to help its users by identifying some personality and lifestyle spendings that can be cut down to build up savings to achieve a target goal within a desired time.
+
+
+
 ---
 
 
 
 ### Intention
 
+As highlighted by the theme there is a need for radical change inorder to put more aside and to get more things done financially. The project seeks to help users achieve more by setting aside bits of their spendings. This is to be done in a fun and engaging way and providing different suggestions on what can be done.
+
 ---
 
 ### Audience
 
----
 
-Our target audience would be those predominantly feeling the pinch, as a result of the cost of living crisis. Communicating in a fun and engaging way is key to how we will respond to our potential user basis's concerns and needs. Taking a less serious approach would act as ice breaker, making the world of finace feel a bit more digestable to the every day joe.
+Our target audience would be those predominantly feeling the pinch, as a result of the cost of living crisis. Communicating in a fun and engaging way is key to how we will respond to our potential user basis's concerns and needs. Taking a less serious approach would act as ice breaker, making the world of finance feel a bit more digestable to the every day joe.
+
+---
 
 ## Wireframes
 
@@ -73,52 +80,79 @@ Our target audience would be those predominantly feeling the pinch, as a result 
 
 ##### Wireframe 1 description: 
 
+The first frame test the intension of the user to save and how much he will like to save a particular period. It includes a progress bar and a nav bar to enable the user identify how far he is to getting the suggestions on improving his savings. The user is able to choose his desired currency.
+After showing intrest, the user is able to use the next button to start the process.
+
 ![question-1](Wireframes/question-1.png)
+
+
+The second frame shows an increasing progress bar with question to how much the user desires to save and it presents a toggle button to switch between months and days.
+
 
 ![question-2](Wireframes/question-2.png)
 
+The third frame is displayong a question that relates to lifestyle habit to guage their consumption, the user is able then able to proceed to the next question.
+
 ![question-3](Wireframes/question-3.png)
 
+
+The fourth frame guages further lifestyle habit to also guage consumption, the user is then able to proceed to the next question.
+
 ![question-4](Wireframes/question-4.png)
+
+The fifth frame ask about the consumption of coffee by the user as an input to the randomization figures using radio buttons to indicate true or false and also to indicate the amount of times, the user is able then able to proceed.
+
+
 ![question-5](Wireframes/question-5.png)
+
+The sixth frame seeks about the users spending on luxuries, here the progress bar shows almost complete and the user is able to proceed to the last question.
+
+
 ![question-6](Wireframes/question-6.png)
+
+The seventh frame ask about the users personal choices, options are selected with radio button providing input to the randomization.
+
+
 ![question-7](Wireframes/question-7.png)
+
+
+The final frame shows the result of the randomization done and presented in the form of suggestions to the user on how they can spend money more wisely and save their desired total.
 
 
 ![final-output](Wireframes/final-output.png)
 
-
+---
 
 ## Features
-
+---
 ### Header
-
+---
 ### Footer
-
+---
 ### Unified Colour Scheme
-
+---
 ### Navigation
-
+---
 ### Progress Bar
-
+---
 ### Peronality Questions
-
+---
 ### Currency Converter
-
+---
 ## Accessibility
-
+---
 ## Design Choices
-
+---
 ### Font
-
+---
 ### Images
-
+---
 ### Widgets 
-
+---
 ### Colour Schemes
-
+---
 ## Code Explanations
-
+---
 ### HTML
 
 ### JavaScript
@@ -126,15 +160,15 @@ Our target audience would be those predominantly feeling the pinch, as a result 
 ### API
 
 ### Materialize/Bootstrap?
-
+----
 ## Bugs
-
+---
 ## Deployment
-
+---
 ### User Interaction
-
+---
 ## Testing
-
+---
 ## Credits
 
 
@@ -166,7 +200,27 @@ Our target audience would be those predominantly feeling the pinch, as a result 
     * Materialize/Bootstrap?
 * Bugs
 * Deployment
+
+The project will be deployed on github pages however we may use heroku; this is yet to be debated.
+
+
     * User Interaction
 * Testing
-* Credits
+* Credits 
+
+#### Resources Used ####
+
+#### Acknowledgement ####
+
+* Organisers: A very big thank you for putting together the Jan-hackathon. 
+
+* Team Members: for creating time out of the time to  create and run the project.
+
+* W3Schools and MDN sites provided guidiance on how to put together the input tag.
+
+* Materialize for providing access to some of the materials used in the project.
+
+* The lighthouse testing function provided suggestions which was used to improve the performance of the project.
+
+
 
