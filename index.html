@@ -63,7 +63,7 @@
                 </div>
                 <!--title ends here-->
                   <div>
-                      <div class="question-one">
+                      <div class="question-two">
                           <div>
                             <input type="text" id="user-input" name="user-input" placeholder="Please Enter Amount" aria-label="user-input"
                             required>
@@ -122,8 +122,9 @@
                 </div>
             </div>
         </div>
-        <div class="page">
+          <div class="page">
             <!--<div class="title">Basic Info:</div>-->
+
           <div class="field">
           <div class="label">Do you smoke? if, so how many per day?</div>
             <div>
@@ -142,16 +143,30 @@
                     <input type="radio" name="question-smoke-two" value="20+" id="20+"><label for="20+">20+ per day</label>
                     <input type="radio" name="question-smoke-two" value="n/a" id="n/a" checked="checked"><label for="n/a">N/A</label>
                   </form>              
+            <div class="field">
+                <div class="label">Do you smoke? if, so how many per day?</div>
+                <div>
+                    <div class="question-two">
+                        <div>
+                            <p><input type="radio" name="question-smoke-one" value="yes">Yes</p>
+                            <p><input type="radio" name="question-smoke-one" value="no">No</p>
+                        </div>
+                        <div>
+                            <p><input type="radio" name="question-smoke-two" value="1-5">1-5 per day</p>
+                            <p><input type="radio" name="question-smoke-two" value="6-10">6-10 per day</p>
+                            <p><input type="radio" name="question-smoke-two" value="11-20">11-20 per day</p>
+                            <p><input type="radio" name="question-smoke-two" value="20+">20+ per day</p>
+                            <p><input type="radio" name="question-smoke-two" value="n/a">N/A (selected)</p>
+                        </div>
+                    </div>
+                    <div class="field">
+                        <button>Next</button>
+                    </div>
                 </div>
-              </div>
-              <div class="field btns">
-                <button class="prev-3 prev">Previous</button>
-                <button class="next-3 next">Next</button>
-              </div>
             </div>
-          </div>
         </div>
               <div class="page">
+                  <!--<div class="title">Basic Info:</div>-->
                   <div class="field">
                       <div class="label">On average, how much do you spend on alcohol?</div>
                       <div class="question-four">
@@ -183,11 +198,28 @@
                           <div class="field btns">
                               <button class="prev-5 prev">Previous</button>
                               <button class="next-5 next">Next</button>
+                      <div class="label">Do you smoke? if, so how many per day?</div>
+                      <div>
+                          <div class="question-two">
+                              <div>
+                                  <p><input type="radio" name="question-smoke-one" value="yes">Yes</p>
+                                  <p><input type="radio" name="question-smoke-one" value="no">No</p>
+                              </div>
+                              <div>
+                                  <p><input type="radio" name="question-smoke-two" value="1-5">1-5 per day</p>
+                                  <p><input type="radio" name="question-smoke-two" value="6-10">6-10 per day</p>
+                                  <p><input type="radio" name="question-smoke-two" value="11-20">11-20 per day</p>
+                                  <p><input type="radio" name="question-smoke-two" value="20+">20+ per day</p>
+                                  <p><input type="radio" name="question-smoke-two" value="n/a">N/A (selected)</p>
+                              </div>
+                          </div>
+                          <div class="field">
+                              <button>Next</button>
                           </div>
                       </div>
                   </div>
-                </div>
-                <div class="page">
+              </div>
+              <div class="page">
                   <div class="field">
                       <div class="label">How much do you spend on clothing?</div>
                       <div class="question-six">
@@ -197,9 +229,16 @@
                           <input type="radio" name="question-clothing" value="150-300" id="150-300"><label for="150-300">150-300 a month (I LOVE shopping!)</label>
                           <input type="radio" name="question-clothing" value="300+" id="300+"><label for="300+">300+ a month (I LOOOVEEE shopping!)</label>
                         </form>
+                      <div class="label">On average, how much do you spend on alcohol?</div>
+                      <div class="question-three">
+                          <p><input type="radio" name="question-alcohol" value="1-5">I don't drink (selected)</p>
+                          <p><input type="radio" name="question-alcohol" value="6-10">0-20 a week</p>
+                          <p><input type="radio" name="question-alcohol" value="11-20">21-50 a week</p>
+                          <p><input type="radio" name="question-alcohol" value="20+">50+ a week</p>
+                          <p><input type="radio" name="question-alcohol" value="n/a">~30 a month</p>
                           <div class="field btns">
-                              <button class="prev-6 prev">Previous</button>
-                              <button class="next-6 next">Next</button>
+                              <button class="prev-1 prev">Previous</button>
+                              <button class="next-1 next">Next</button>
                           </div>
                       </div>
                   </div>
@@ -228,8 +267,8 @@
                           <button class="next-7 next">Submit</button>
                       </div>
                       </div>
+
                   </div>
-                </div>
           </form>
       </div>
   </div>
