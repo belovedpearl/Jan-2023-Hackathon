@@ -32,6 +32,10 @@
     min-height: 100vh;
   }
 
+  #progress-bar {
+    background-color: #8BD7D2;
+  }
+
   .progress {
     height: 80px;
     border-radius: 10px;
@@ -45,6 +49,7 @@
     width: 100%;
     border-radius: 10px;
     display: flex; 
+    background-color: #8BD7D2;
 }
   .container{
     padding: 0px 35px 10px 35px;
