@@ -45,7 +45,7 @@ Collectively as a group we pitched different ideas to each other, in response to
 
 Hitting upon our idea, we delved further into how we could ensure that we solved a **problem**, and we responded to this, with the implementation of our tech skills. We discussed how our potential target audience could be handling budgeting, at a time where our living standards are suffering, because of the cost of living and energy crisis. Everyone has had to be a bit more thrifty and cut back where they can. What we wish to achieve is a budgeting app, that uses visual representations, to enable the indiviudal to make better choices on how they spend and save their money, over a peroid of time. 
 
-Initially the user will sign up to the application and take a personality test, this will allow a randomiser to generate user specific visuals from their answers. For instance over a peroid of a week how often does the user buy a cup of coffee, in turn this will generate the weekly cost in either sterling, dollars or euros. In order to have real time exchange values we will have to use an api, to interact with out application. 
+Initially the plan was to have a user sign up page linked to a nav bar, however we ran into complications trying to achieve this using materialize, and decided that it could be marketed as an application tool instead. The role of the user will be to take a personality test, which will identify key areas of expenditure, allowing our built in function utilising JavaScript, to randomly generate user specific visuals linked to lifestyle spending. This will highlight how the individual can save money over a chosen time peroid. For instance over a week how often does the user buy a cup of coffee, in turn this will generate the weekly cost in either sterling, dollars or euros. The results page will then clearly represent areas where the user could save money by reducing their consumption of i.e buying coffee from a cafe every day, we could suggest from them to buy a coffee every other day and they will save x anount of money over y amount of time. In order to have real time exchange values we will have to use an api, to interact with our application. 
 
 ### Concept 
 ---
@@ -63,7 +63,7 @@ Main conceptual points are as follows:
 ### Intention
 ---
 
-Penny Smart aims to be marketed towards userbases, who use modern banking applications like **Monzo**, **Revolut** and **Starling**. These banks, allow for their users, to interact, with their budgetting needs. The application we aim to create, could be pitched to likes of these modern banks as a new way for their user bases's to interact with their app in a engaging way. 
+Penny Smart aims to be marketed towards userbases, who use modern banking applications like **Monzo**, **Revolut** and **Starling**. These banks, allow for their users, to interact, with their budgetting needs. The application we aim to create, could be pitched to likes of these modern banks as a new way for their user bases's to interact with their app in an engaging way. 
 
 ### Audience
 ---
@@ -174,6 +174,8 @@ This shows the user the progress they have made with engaging the available ques
 ## Design Choices
 ---
 
+* Our design choices were dictated by our ability to implement materializes framwork to the front end design, the presented challenges, but it also allowed us to achieve a clean design the would communicate our theme and concept to the user.
+
 ### Font
 ---
 
@@ -212,9 +214,15 @@ This shows the user the progress they have made with engaging the available ques
 ## Bugs
 ---
 
+* Radio buttons
+    * During a huddle team talk we realised that our radio buttons were not appearing, once rendered. We discovered that the label element was missing from the syntax and because we were using materialise it required an input as a child element.
+* Materialize
+    * Being guided by our experienced group members, we all learnt that Materialize works on a grid basis. This caused us problems with trying to centre our text on the nav bar, where originally we were going to have a sign up link. However, because the bugs 
+      would have needed specific media queries to iron it outt and they would have been better achieved at the start of the project, we took the creative choice to drop the sign up option and present our application as more of a tool.
+
 ## Deployment
 ---
-The project will be deployed on github pages however we may use heroku; this is yet to be debated.
+The project will be deployed on github pages, we believed this to be the least complex method allowing us to showcase our project.
 
 ### User Interaction
 ---
@@ -223,9 +231,35 @@ The project will be deployed on github pages however we may use heroku; this is 
 ## Credits
 ---
 
+* **TEAM - BROKE BUSTERS!**
+
+* Front end designers 
+    
+    * Rashidat Adekoya
+    * Andrés Felipe García Cano
+
+* Back end designers
+
+    * Adam Boley
+    * Cara McAvinchey
+
+* Readme and logo design curation 
+
+    * Rhys Few
+    * Oluwaseun Omisakin
+
 ### Resources
 
-* 
+* [https://coolors.co/](https://coolors.co/)
+* [https://balsamiq.com](https://balsamiq.com/wireframes/?gclid=Cj0KCQiAt66eBhCnARIsAKf3ZNG3MDPZckauwhwQnD_zYLS6G7lBdpDlTvyny6heY507HgosJldUoOEaAvMVEALw_wcB)
+* [https://materializecss.com/](https://materializecss.com/)
+* [https://github.com/](https://github.com/)
+* [https://www.markdownguide.org/basic-syntax/](https://www.markdownguide.org/basic-syntax/)
+* [https://github.com/AdamBoley/The-Space-Marine-Legions](https://github.com/AdamBoley/The-Space-Marine-Legions)
+* [https://andresfgc.github.io/ROE-Checker/](https://andresfgc.github.io/ROE-Checker/)
+* [https://www.rightmove.co.uk/mortgages/mortgage-calculator](https://www.rightmove.co.uk/mortgages/mortgage-calculator)
+* [https://www.revolut.com/](https://www.revolut.com/)
+* [https://monzo.com/](https://monzo.com/)
 
 ### Acknowledgments
 
