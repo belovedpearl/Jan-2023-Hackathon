@@ -14,7 +14,6 @@
     * [Header](#header)
     * [Footer](#footer)
     * [Unified colour scheme](#unified-colour-scheme)
-    * [Navigation](#navigation)
     * [Progress Bar](#progress-bar)
     * [Radio Buttons](#radio-buttons)
     * [Personality Questions](#personality-questions)
@@ -55,7 +54,7 @@ Coding being logic based creativity allowed us to explore and critique our metho
 Main conceptual points are as follows:
 
 * Interact with our audience in a fun and engaging way, **times are hard** dont be too serious e.g. this could be represented by using a playful colour pallete and widgets.
-* Ask questions to guage the individuals personality, we have decided to start with **10 questions** but if we had more development time we would certainly add more.
+* Ask questions to guage the individuals personality, we have decided to start with **7-(10) questions** but if we had more development time we would certainly add more.
 * Use a **progress bar** to give a visual representation to the user on the number of questions that need to be answered.
 * By specifiying how much money the user wants to save the app will generate a response using visual representations of **life style spending habbits**. 
 * Alerting the user to the fact that by **reducing** their **consumption** of for example coffee they will be able to save their desired amount of money over a **peroid of time**.
@@ -132,13 +131,10 @@ The second frame shows an increasing progress bar with question to how much the 
 ## Features
 ---
 * #### Header
-    * 
+    * The header will feature the applications name and logo to give clear indications of identity to the user.
 
-This shows the user the progress they have made with engaging the available questions. The progress bar are assigned as part of ways to improve user experience of the project.
-
----
 * #### Footer
-    * 
+    * The footer will feature information about the team.
 
 * #### Unified Colour Scheme
  [Original colour pallete test using coolors.co](https://coolors.co/palette/05668d-427aa1-ebf2fa-679436-a5be00)
@@ -147,27 +143,26 @@ This shows the user the progress they have made with engaging the available ques
  [Final colour pallete test using coolors.co](https://coolors.co/palette/49c6e5-54defd-fffbfa-00bd9d-8bd7d2)
    
     * We believed that this colour pallete situated itself better in conjunction with our concept and theme. The color meaning behind blue green refers to harmony and prosperity. The blue tint evokes trustworthiness and wisdom.
-* #### Navigation
-    * 
 
 * #### Progress Bar
-    * 
+    * This shows the user the progress they have made with engaging the available questions. The progress bar are assigned as part of ways to improve user experience of the project.
 
 * #### Radio Buttons
-    * We chose to use radio buttons because it is a simple way to let out our questions and answers to allow the user to interact with the application with ease. 
+    * We chose to use radio buttons because it is a simple way to let out our questions and answers to allow the user to interact with the application 
+      with ease. 
 
 * #### Peronality Questions
-    * 
+    * How much would you like to save?
+    * How much time do you have?
+    * Do you smoke? if, so how many per day?
+    * On average, how much do you spend on alcohol?
+    * How often do you buy coffee?
+    * How much do you spend on clothing?
+    * Do you play the lottery?
 
 * #### Currency Converter
-    * 
+    *  Using an Api we will display real time conversions for sterling, dollars and euros.
 
-
-
-### Personality Questions
----
-### Currency Converter
----
 ## Accessibility
 ---
 
@@ -175,6 +170,7 @@ This shows the user the progress they have made with engaging the available ques
 ---
 
 * Our design choices were dictated by our ability to implement materializes framwork to the front end design, the presented challenges, but it also allowed us to achieve a clean design the would communicate our theme and concept to the user.
+* Originally the questions about currency and the frequency of time were going to have toggles, but the front end team decided to use drop down boxes to makethe experience clearer.
 
 ### Font
 ---
@@ -220,7 +216,7 @@ This shows the user the progress they have made with engaging the available ques
 
 ## Deployment
 ---
-The project will be deployed on github pages, we believed this to be the least complex method allowing us to showcase our project.
+* The project will be deployed on github pages, we believed this to be the least complex method allowing us to showcase our project.
 
 ### User Interaction
 ---
