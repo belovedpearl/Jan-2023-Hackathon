@@ -47,7 +47,7 @@
     display: flex; 
 }
   .container{
-    padding: 50px 35px 10px 35px;
+    padding: 0px 35px 10px 35px;
   }
 
   .container header{
