@@ -5,6 +5,25 @@
     font-family: 'Poppins', sans-serif;
   }
 
+  .nav-bar {
+    background-color: #8BD7D2;
+    display: flex;
+    width: 100%;
+  }
+  
+  .logo {
+    height: 4.25rem;
+    width: 4.8rem;
+    display: flex;
+  }  
+  
+   .brand-name {
+    /* font-family: Montserrat, sans-serif; */
+    text-align: center;
+   justify-content: center;
+    width: 100%;
+  }
+
   body{
     display: flex;
     align-items: center;
