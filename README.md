@@ -190,6 +190,8 @@ This shows the user the progress they have made with engaging the available ques
 
 * HTML
 
+
+
 * JavaScript
 
 * CSS
@@ -203,7 +205,7 @@ This shows the user the progress they have made with engaging the available ques
 * Github and IDEs included Gitpod and VSCode
     * Storing repositories and manipluating code cross party
 * Slack
-    * Video calls and messaging, allowing the team to keep communication bfree flowing
+    * Video calls and messaging, allowing the team to keep communication free flowing
 * Balsamiq
     * creating wireframes to plan our project
 
