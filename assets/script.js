@@ -14,6 +14,7 @@ let userData = {
     amountToSave: 0,
     timeScale: 0,
     timeUnits: "months",
+    currency: "pounds",
     smoke: false,
     smokeAmount: 0,
     alcohol: false,
@@ -32,7 +33,8 @@ let userData = {
 // set style.width to various increasing percentage values
 let progressBar = document.getElementById('progress-bar').style.width
 
-// declare 
+// declare
+let currency = document.getElementById('currency') // grab user input of currency, will use in API
 let question1 = document.getElementById('question1-amount') // amount to save question wrapper div
 let question2 = document.getElementById('question2-time') // amount of time question wrapper div
 let question3 = document.getElementById('question3-smoke') // smoke question wrapper div
@@ -292,7 +294,7 @@ function question7() {
         lotteryAmountRadioForm.style.display = 'block'
         // block not set in stone - will need to change based on CSS design
         userData['lottery'] = true
-        console.log(`buys clothes`)
+        console.log(`buys lottery tickets`)
     }
 
     if (lotteryRadioSelect == 'no'){
@@ -301,7 +303,7 @@ function question7() {
         console.log(`does not buy clothes`)
     }
 
-    let lotteryAmount = document.getElementsByName('clothing-amount')
+    let lotteryAmount = document.getElementsByName('lottery-amount')
 
     // iterate over the list above
     // if the radio is checked, push that value to the userData object
@@ -327,9 +329,9 @@ function question7() {
 // prelimary data:
 // £12.60 per pack of 20 cigarettes
 // £3.40 for a latte/cappucino
-// need amount for an average drink
-// need amount for an average clothes shopping trip
-// need amount for an average lottery ticket
+// £5 per drink
+// £80 per month
+// £2.50 per ticket
 
 function final() {
 
@@ -345,6 +347,7 @@ function final() {
     let amountToSave = userData['amountToSave']
     let timeScale = userData['timeScale']
     let timeUnits = userData['timeUnits']
+    let currency = userDatap['currency']
     // amounts below are currency amounts (£50), not numbers of objects (3 packs of cigarettes)
     let smokeAmount = userData['smokeAmount']
     let alcoholAmount = userData['alcoholAmount']
@@ -358,50 +361,58 @@ function final() {
     let clothing = userData['clothing']
     let lottery = userData['lottery']
 
+    // average prices of stuff:
+    smokePrice = 12.60
+    alcoholPrice = 5.00
+    coffeePrice = 3.40
+    clothingPrice = 80.00
+    lotteryPrice = 2.50
+
     // now calculate the length of time it would take to save the specified amount of money just by forgoing that one thing
     // would need to check to see if this length of time is greater than the timeScale
     // for example 150 / 15
 
-    // instantiate an empty array that will contain the time periods calculated below. Contains integer
+    // instantiate an empty array that will contain the time periods calculated below. Contains integers
     let active_elements = []
-    // Need to instantiate a second array to hold strings = "packs of cigarettes", "cups of coffee", etc
+
+    // Instantiate a second array to hold strings = "packs of cigarettes", "cups of coffee", etc
     let strings = []
     // contains strings
 
     // pretty sure this needs the inputs of costs of packs of cigarettes, shopping trips, etc
     if (smoke == true) {
-        var smokePeriod = amountToSave / smokeAmount
-        active_elements.push(smokePeriod)
+        let packsToGiveUp = (smokeAmount / smokePrice) * timeScale
+        active_elements.push(packsToGiveUp)
         strings.push("packs of cigarettes") // can change this to whatever unit we decide works best
-        console.log(`smoke period is ${smokePeriod}`)
+        console.log(`user must give up ${packsToGiveUp} packs of cigarettes`)
     }
 
     if (alcohol == true) {
-        var alcoholPeriod = amountToSave / alcoholAmount
-        active_elements.push(alcoholPeriod)
+        let alcoholicDrinksToGiveUp = (alcoholAmount / alcoholPrice) * timeScale
+        active_elements.push(alcoholicDrinksToGiveUp)
         strings.push("akcoholic drinks")
-        console.log(`alcohol period is ${alcoholPeriod}`)
+        console.log(`The user must give up ${alcoholicDrinksToGiveUp} alcoholic drinks`)
     }
 
     if (coffee == true) {
-        var coffeePeriod = amountToSave / coffeeAmount
-        active_elements.push(coffeePeriod)
+        let coffeeToGiveUp = (coffeeAmount / coffeePrice) * timeScale
+        active_elements.push(coffeeToGiveUp)
         strings.push("cups of coffee")
-        console.log(`coffee period is ${coffeePeriod}`)
+        console.log(`user must give up ${coffeeToGiveUp} cups of coffee`)
     }
 
     if (clothing == true) {
-        var clothingPeriod = amountToSave / clothingAmount
-        active_elements.push(clothingPeriod)
+        let clothingToGiveUp = (clothingAmount / clothingPrice) * timeScale
+        active_elements.push(clothingToGiveUp)
         strings.push("shopping trips")
-        console.log(`clothing period is ${clothingPeriod}`)
+        console.log(`user must give up ${clothingToGiveUp} shopping trips`)
     }
 
     if (lottery == true) {
-        var lotteryPeriod = amountToSave / lotteryAmount
-        active_elements.push(lotteryPeriod)
+        let lotteryToGiveUp = (lotteryAmount / lotteryPrice) * timeScale
+        active_elements.push(lotteryToGiveUp)
         strings.push("lottery tickets")
-        console.log(`lottery period is ${lotteryPeriod}`)
+        console.log(`user must give up ${lotteryToGiveUp} lottery tickets`)
     }
 
     // active_elements array should now contain some elements
@@ -428,12 +439,6 @@ function final() {
     // ergo, same length means that random can be used to index both and get the same element
 
     // this is where we push the suggested number of things to give up to the user
-    finalOutput.innerText = `The Penny Smart tool recommends that you give up ${suggestion} ${suggestion_string} for ${timeScale} ${timeUnits} to save ${amountToSave}`
-
-    // for(count = 0; count <= random; count++) {
-    //     if (count == random) {
-    //         var suggestion = active_elements[random]
-    //     }
-    // }
-
+    finalOutput.innerText = `The Penny Smart tool recommends that you give up ${suggestion} ${suggestion_string} for ${timeScale} ${timeUnits} to save ${amountToSave} ${currency}`
+    // this should inject "The Penny Smart tool recommends that you give up 10 fewer cups of coffee over 5 weeks to save 50 pounds"
 }

@@ -13,52 +13,67 @@
   <title>Penny Smart</title>
 </head>
 
-<body id="index-body">
-
-
-    <!-- to be revieved <div class="progress">
-      <div class="determinate blue" style="width: 20%; animation: grow 2s">Progress</div>
-    </div>
-
-    <section class="time">
-      <div class="progress">
-        <div class="determinate blue" style="width: 50%; animation: grow 2s">Progress</div>
-      </div> -->
+<body id="index-body"> 
 
     <div class="container">
       <header>
+
         <nav>
-          <div class="nav-wrapper">
-            <a href="#" class="brand-logo">Penny Smart</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="index.html">Login|Sign Up</a></li>
-            </ul>
+          <div class="nav-bar">
+            <img class="logo" src="assets/images/hackathon-project.webp" alt="logo"> 
+            <h1><a href="index.html" class="brand-name">Penny Smart</a></h1>
           </div>
         </nav>
+
       </header>
+      <div class="slogan">
+        Penny away each and every day.
+      </div>
+      <!-- progress bar -->
+      <div class="progress" id="progress-bar">
+        <div class="determinate blue" style="width: 0%; animation: grow 2s">Progress</div>
+      </div>
+
+
       <div class="form-outer">
         <form action="#">
-          <div class="page" id="question">
+          <!-- first question / amount -->
+          <div class="page" id="question1-amount">
             <div class="field">
               <div class="label">How much would you like to save?</div>
+              
+              <!-- dropdown area for currency selection & API -->
+              <div id="form-control">
+                <label for="dropdown"></label>
+                <!-- replace id with "currency" -->
+                <select id="dropdown" class="label-control">
+                  <option value="">Choose Currency</option>
+                  <option value="dollar">Dollar</option>
+                  <option value="pound">Pound</option>
+                  <option value="euro">Euro</option>
+                </select>
+              </div>
+
               <input type="text" id="user-input" name="user-input" placeholder="Please Enter Amount" aria-label="user-input" required="">
             </div>
+            <!-- first button triggers JS to store value and display next question -->
             <div class="field btns">
-              <button>Next</button>
+              <button id="first-next">Next</button>
             </div>
          </div>
-         <div class="page" id="question">
+         <!-- second question / time -->
+         <div class="page" id="question2-time">
           <div class="field">
             <div class="label">How much time do you have?</div>
-              <!-- Toggle switch -->
-                  <div class="switch">
-                      <label>
-                        Day
-                        <input type="checkbox">
-                        <span class="lever"></span>
-                        Month
-                      </label>
-                  </div>
+            <div id="form-control">
+              <label for="dropdown"></label> 
+      
+            <select id="dropdown" class="label-control">
+              <option value="">Choose time</option>
+              <option value="dollar">Days</option>
+              <option value="pound">Months</option>
+              </select>
+            </div>
             <input type="text" id="user-input" name="user-input" placeholder="Please Enter Amount" aria-label="user-input" required="">
           </div>
           <div class="field btns">
@@ -66,7 +81,8 @@
             <button class="next-1 next">Next</button>
           </div>
          </div>
-         <div class="page" id="question">
+         <!-- third question / smoking habits smoking habits per pack of cigarettes -->
+         <div class="page" id="question3-smoke">
          <div class="field">
          <div class="label">Do you smoke? if, so how many per day?</div>
           <div>
@@ -94,7 +110,8 @@
           </div>
          </div>
          </div>
-         <div class="page" id="question">
+         <!-- fourth question / drinking habits -->
+         <div class="page" id="question4-alcohol">
             <div class="field">
                 <div class="label">On average, how much do you spend on alcohol?</div>
                 <div class="question-four">
@@ -110,7 +127,8 @@
                 </div>
             </div>
          </div>
-         <div class="page" id="question">
+         <!-- fifth question / coffee habits per drink -->
+         <div class="page" id="question5-coffee">
             <div class="field">
                 <div class="label">How often do you buy coffee?</div>
                 <div class="question-five">
@@ -126,7 +144,8 @@
                 </div>
             </div>
          </div>
-         <div class="page" id="question">
+         <!-- sixth question / clothes shopping -->
+         <div class="page" id="question6-clothing">
             <div class="field">
                     <div class="label">How much do you spend on clothing?</div>
                     <div class="question-six">
@@ -141,7 +160,8 @@
                     </div>
             </div>
          </div>
-         <div class="page" id="question">
+         <!-- seventh question / lottery ticket purchases -->
+         <div class="page" id="question7-lottery">
             <div class="field">
                     <div class="label">Do you play the lottery</div>
                     <div class="question-seven">
