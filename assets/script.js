@@ -9,18 +9,20 @@ document.addEventListener("DOMContentLoaded", function(){
 // Global-scoped object that holds data about a user
 // Will be accessed in final functions
 // Each function in the chain below will dynamically update the object's key-value pairs
+// update smoke, alcohol, etc to use Boolean True/False values instead of string values
 let userData = {
     amountToSave: 0,
     timeScale: 0,
     timeUnits: "months",
-    smoke: "no",
+    smoke: false,
     smokeAmount: 0,
-    alcohol: "no",
+    alcohol: false,
     alcoholAmount: 0,
-    coffee: "no",
+    coffee: false,
     coffeeAmount: 0,
-    clothing: "no",
+    clothing: false,
     clothingAmount: 0,
+    lottery: false,
     lotteryAmount: 0,
 }
 
@@ -38,6 +40,7 @@ let question4 = document.getElementById('question4-alcohol') // alcohol div wrap
 let question5 = document.getElementById('question5-coffee') // coffee question wrapper div
 let question6 = document.getElementById('question6-clothing') // clothing question wrapper div
 let question7 = document.getElementById('question7-lottery') // lottery question wrapper div
+let finalOutput = document.getElementById('final-output') // final output wrapper div
 
 // question 1 - relates to wireframe question-1.png
 // question-1 HTML is displayed by default
@@ -110,13 +113,13 @@ function question3() {
     if (smokeRadioSelect == 'yes') {
         smokeAmountRadioForm.style.display = 'block'
         // block not set in stone - will need to change based on CSS design
-        userData['smoke'] = 'yes'
+        userData['smoke'] = true
         console.log(`Does smoke`)
     }
 
     if (smokeRadioSelect == 'no' ){
         smokeAmountRadioForm.style.display = 'none'
-        userData['smoke'] = 'no'
+        userData['smoke'] = false
         console.log(`Does not smoke`)
     }
     
@@ -159,13 +162,13 @@ function question4() {
     if (alcoholRadioSelect == 'yes') {
         alcoholAmountRadioForm.style.display = 'block'
         // block not set in stone - will need to change based on CSS design
-        userData['alcohol'] = 'yes'
+        userData['alcohol'] = true
         console.log(`Drinks`)
     }
 
     if (alcoholRadioSelect == 'no' ){
         alcoholAmountRadioForm.style.display = 'none'
-        userData['alcohol'] = 'no'
+        userData['alcohol'] = false
         console.log(`Filthy teetotaler`)
     }
 
@@ -204,13 +207,13 @@ function question5() {
     if (coffeeRadioSelect == 'yes') {
         coffeeAmountRadioForm.style.display = 'block'
         // block not set in stone - will need to change based on CSS design
-        userData['coffee'] = 'yes'
+        userData['coffee'] = true
         console.log(`Drinks coffee`)
     }
 
     if (coffeeRadioSelect == 'no'){
         coffeeAmountRadioForm.style.display = 'none'
-        userData['coffee'] = 'no'
+        userData['coffee'] = false
         console.log(`does not drink coffee`)
     }
 
@@ -246,13 +249,13 @@ function queston6() {
     if (clothingRadioSelect == 'yes') {
         clothingAmountRadioForm.style.display = 'block'
         // block not set in stone - will need to change based on CSS design
-        userData['clothing'] = 'yes'
+        userData['clothing'] = true
         console.log(`buys clothes`)
     }
 
     if (clothingRadioSelect == 'no'){
         clothingAmountRadioForm.style.display = 'none'
-        userData['clothing'] = 'no'
+        userData['clothing'] = false
         console.log(`does not buy clothes`)
     }
 
@@ -278,8 +281,25 @@ function question7() {
     question6.style.display = 'none'
     question7.style.display = 'block'
 
+    // variable assignment
+    let lotteryRadioSelect = document.getElementById('lottery-radio') // lottery yes-no radio selector
+    let lotteryAmountRadioForm = document.getElementById('lottery-amount')
+
     // update progressBar to 84%
     progressBar = '84%'
+
+    if (lotteryRadioSelect == 'yes') {
+        lotteryAmountRadioForm.style.display = 'block'
+        // block not set in stone - will need to change based on CSS design
+        userData['lottery'] = true
+        console.log(`buys clothes`)
+    }
+
+    if (lotteryRadioSelect == 'no'){
+        lotteryAmountRadioForm.style.display = 'none'
+        userData['lottery'] = false
+        console.log(`does not buy clothes`)
+    }
 
     let lotteryAmount = document.getElementsByName('clothing-amount')
 
@@ -298,6 +318,122 @@ function question7() {
     final()
 }
 
+// Final function
+// amount to save and time period ex. £150 and 3 months
+// Cara's approach:
+// divide amount to save by time period
+// this gives amount to save per unit time, so in this case £50 / month
+
+// prelimary data:
+// £12.60 per pack of 20 cigarettes
+// £3.40 for a latte/cappucino
+// need amount for an average drink
+// need amount for an average clothes shopping trip
+// need amount for an average lottery ticket
+
 function final() {
+
+    // hide question 7 element, show final output
+    question7.style.display = 'none'
+    finalOutput.style.display = 'block'
+
+    // update progressBar to 100%
+    progressBar = '100%'
+
+    // unpack userData object into function-scope variables
+    console.log('unpack userData')
+    let amountToSave = userData['amountToSave']
+    let timeScale = userData['timeScale']
+    let timeUnits = userData['timeUnits']
+    // amounts below are currency amounts (£50), not numbers of objects (3 packs of cigarettes)
+    let smokeAmount = userData['smokeAmount']
+    let alcoholAmount = userData['alcoholAmount']
+    let coffeeAmount = userData['coffeeAmount']
+    let clothingAmount = userData['clothingAmount']
+    let lotteryAmount  = userData['lotteryAmount']
+    // boolean true/false values of userData
+    let smoke = userData['smoke']
+    let alcohol = userData['alcohol']
+    let coffee = userData['coffee']
+    let clothing = userData['clothing']
+    let lottery = userData['lottery']
+
+    // now calculate the length of time it would take to save the specified amount of money just by forgoing that one thing
+    // would need to check to see if this length of time is greater than the timeScale
+    // for example 150 / 15
+
+    // instantiate an empty array that will contain the time periods calculated below. Contains integer
+    let active_elements = []
+    // Need to instantiate a second array to hold strings = "packs of cigarettes", "cups of coffee", etc
+    let strings = []
+    // contains strings
+
+    // pretty sure this needs the inputs of costs of packs of cigarettes, shopping trips, etc
+    if (smoke == true) {
+        var smokePeriod = amountToSave / smokeAmount
+        active_elements.push(smokePeriod)
+        strings.push("packs of cigarettes") // can change this to whatever unit we decide works best
+        console.log(`smoke period is ${smokePeriod}`)
+    }
+
+    if (alcohol == true) {
+        var alcoholPeriod = amountToSave / alcoholAmount
+        active_elements.push(alcoholPeriod)
+        strings.push("akcoholic drinks")
+        console.log(`alcohol period is ${alcoholPeriod}`)
+    }
+
+    if (coffee == true) {
+        var coffeePeriod = amountToSave / coffeeAmount
+        active_elements.push(coffeePeriod)
+        strings.push("cups of coffee")
+        console.log(`coffee period is ${coffeePeriod}`)
+    }
+
+    if (clothing == true) {
+        var clothingPeriod = amountToSave / clothingAmount
+        active_elements.push(clothingPeriod)
+        strings.push("shopping trips")
+        console.log(`clothing period is ${clothingPeriod}`)
+    }
+
+    if (lottery == true) {
+        var lotteryPeriod = amountToSave / lotteryAmount
+        active_elements.push(lotteryPeriod)
+        strings.push("lottery tickets")
+        console.log(`lottery period is ${lotteryPeriod}`)
+    }
+
+    // active_elements array should now contain some elements
+    console.log(`active_elements array is ${active_elements}`)
+
+    // get length of the array
+    let length = active_elements.length
+    // length should be same as strings.length
+    // active_elements.length == strings.length
+
+    // log out length, remove in final build
+    console.log(length)
+
+    //get a random number between 0 and and the integer length of the array
+    // so between 0 and 3 if the array is 3 elements long
+    random = Math.floor(Math.random() * length) + 1
+    // between 1 and 5 if user smokes, drinks, coffees, shops and lotterys
+
+    // use the random number to get an associated random index of the active_elements array
+    let suggestion = active_elements[random]
+    let suggestion_string = strings[random]
+
+    // second array will have same number of elements as suggestion
+    // ergo, same length means that random can be used to index both and get the same element
+
+    // this is where we push the suggested number of things to give up to the user
+    finalOutput.innerText = `The Penny Smart tool recommends that you give up ${suggestion} ${suggestion_string} for ${timeScale} ${timeUnits} to save ${amountToSave}`
+
+    // for(count = 0; count <= random; count++) {
+    //     if (count == random) {
+    //         var suggestion = active_elements[random]
+    //     }
+    // }
 
 }
