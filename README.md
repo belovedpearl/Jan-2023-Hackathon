@@ -79,11 +79,21 @@ Our target audience would be those predominantly feeling the pinch, as a result 
 
 ---
 
+
+
+The first frame test the intension of the user to save and how much he will like to save a particular period. It includes a progress bar and a nav bar to enable the user identify how far he is to getting the suggestions on improving his savings. The user is able to choose his desired currency.
+After showing intrest, the user is able to use the next button to start the process.
+
+
 ##### Wireframe 1 description: The first frame test the intension of the user to save and how much he will like to save a particular period. It includes a progress bar and a nav bar to enable the user identify how far he is to getting 
 ##### the suggestions on improving his savings. The user is able to choose his desired currency. After showing intrest, the user is able to use the next button to start the process.
 
 
  ![question-1](Wireframes/question-1.png)
+
+
+
+The second frame shows an increasing progress bar with question to how much the user desires to save and it presents a toggle button to switch between months and days.
 
 ##### Wireframe 2 description: The second frame shows an increasing progress bar with question to how much the user desires to save and it presents a toggle button to switch between months and days.
 
@@ -124,6 +134,9 @@ Our target audience would be those predominantly feeling the pinch, as a result 
 * #### Header
     * 
 
+This shows the user the progress they have made with engaging the available questions. The progress bar are assigned as part of ways to improve user experience of the project.
+
+---
 * #### Footer
     * 
 
@@ -149,6 +162,12 @@ Our target audience would be those predominantly feeling the pinch, as a result 
 * #### Currency Converter
     * 
 
+
+
+### Personality Questions
+---
+### Currency Converter
+---
 ## Accessibility
 ---
 
