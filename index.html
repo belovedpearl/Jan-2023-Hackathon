@@ -29,39 +29,42 @@
       <div class="heading">
         Penny away each and every day.
       </div>
-
-      <div class="progress">
+      <!-- progress bar -->
+      <div class="progress" id="progress-bar">
         <div class="determinate blue" style="width: 0%; animation: grow 2s">Progress</div>
       </div>
 
 
       <div class="form-outer">
         <form action="#">
+          <!-- first question / amount -->
           <div class="page" id="question1-amount">
             <div class="field">
               <div class="label">How much would you like to save?</div>
-
+              
+              <!-- dropdown area for currency selection & API -->
               <div id="form-control">
                 <label for="dropdown"></label> 
-        
-              <select id="dropdown" class="label-control">
-                <option value="">Choose Currency</option>
-                <option value="dollar">Dollar</option>
-                <option value="pound">Pound</option>
-                <option value="euro">Euro</option>
+                <select id="dropdown" class="label-control">
+                  <option value="">Choose Currency</option>
+                  <option value="dollar">Dollar</option>
+                  <option value="pound">Pound</option>
+                  <option value="euro">Euro</option>
                 </select>
               </div>
 
               <input type="text" id="user-input" name="user-input" placeholder="Please Enter Amount" aria-label="user-input" required="">
             </div>
+            <!-- first button triggers JS to store value and display next question -->
             <div class="field btns">
-              <button>Next</button>
+              <button id="first-next">Next</button>
             </div>
          </div>
+         <!-- second question / time -->
          <div class="page" id="question2-time">
           <div class="field">
             <div class="label">How much time do you have?</div>
-              <!-- Toggle switch -->
+              <!-- time toggle switch remove this? -->
                   <div class="switch">
                       <label>
                         Day
@@ -77,6 +80,7 @@
             <button class="next-1 next">Next</button>
           </div>
          </div>
+         <!-- third question / smoking habits smoking habits per pack of cigarettes -->
          <div class="page" id="question3-smoke">
          <div class="field">
          <div class="label">Do you smoke? if, so how many per day?</div>
@@ -105,6 +109,7 @@
           </div>
          </div>
          </div>
+         <!-- fourth question / drinking habits -->
          <div class="page" id="question4-alcohol">
             <div class="field">
                 <div class="label">On average, how much do you spend on alcohol?</div>
@@ -121,6 +126,7 @@
                 </div>
             </div>
          </div>
+         <!-- fifth question / coffee habits per drink -->
          <div class="page" id="question5-coffee">
             <div class="field">
                 <div class="label">How often do you buy coffee?</div>
@@ -137,6 +143,7 @@
                 </div>
             </div>
          </div>
+         <!-- sixth question / clothes shopping -->
          <div class="page" id="question6-clothing">
             <div class="field">
                     <div class="label">How much do you spend on clothing?</div>
@@ -152,6 +159,7 @@
                     </div>
             </div>
          </div>
+         <!-- seventh question / lottery ticket purchases -->
          <div class="page" id="question7-lottery">
             <div class="field">
                     <div class="label">Do you play the lottery</div>
