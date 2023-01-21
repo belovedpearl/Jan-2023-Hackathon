@@ -26,7 +26,7 @@
         </nav>
 
       </header>
-      <div class="heading">
+      <div class="slogan">
         Penny away each and every day.
       </div>
       <!-- progress bar -->
@@ -64,15 +64,15 @@
          <div class="page" id="question2-time">
           <div class="field">
             <div class="label">How much time do you have?</div>
-              <!-- time toggle switch remove this? -->
-                  <div class="switch">
-                      <label>
-                        Day
-                        <input type="checkbox">
-                        <span class="lever"></span>
-                        Month
-                      </label>
-                  </div>
+            <div id="form-control">
+              <label for="dropdown"></label> 
+      
+            <select id="dropdown" class="label-control">
+              <option value="">Choose time</option>
+              <option value="dollar">Days</option>
+              <option value="pound">Months</option>
+              </select>
+            </div>
             <input type="text" id="user-input" name="user-input" placeholder="Please Enter Amount" aria-label="user-input" required="">
           </div>
           <div class="field btns">
