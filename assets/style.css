@@ -12,6 +12,20 @@
     min-height: 100vh;
   }
 
+  .progress {
+    height: 80px;
+    border-radius: 10px;
+    width: 300px;
+    margin: 50px auto;
+    padding: 15px;
+}
+
+.determinate {
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    display: flex; 
+}
   .container{
     padding: 50px 35px 10px 35px;
   }
