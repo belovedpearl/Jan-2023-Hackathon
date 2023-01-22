@@ -60,7 +60,8 @@ function question1() {
     progressBar = '0%'
     
     // update userData object and log value to console
-    userData['amountToSave'] = currency
+    userData['currency'] = currency
+    userData['amountToSave'] = amount
     console.log(`userData object has values: ${userData}`)
 
     // call next function
@@ -442,3 +443,7 @@ function final() {
     finalOutput.innerText = `The Penny Smart tool recommends that you give up ${suggestion} ${suggestion_string} for ${timeScale} ${timeUnits} to save ${amountToSave} ${currency}`
     // this should inject "The Penny Smart tool recommends that you give up 10 fewer cups of coffee over 5 weeks to save 50 pounds"
 }
+
+
+// API
+
