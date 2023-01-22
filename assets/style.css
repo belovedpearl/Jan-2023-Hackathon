@@ -153,3 +153,21 @@
     color: #49C6E5;
     font-weight: bold;
   }
+
+  .footer-wrapper{
+    background-color: #49C6E5;
+    padding: 1rem;
+    color: #FFFBFA;
+    margin-top: 5rem;
+  }
+
+  .team-b {
+    text-align: center;
+  }
+
+  .copyright {
+    background-color: #54DEFD;
+    text-align: center;
+    font-weight: 200;
+  }
+  
