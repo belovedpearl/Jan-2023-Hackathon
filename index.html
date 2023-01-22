@@ -2,15 +2,14 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="assets/style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
-  <title>Penny Smart</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+    <title>Penny Smart</title>
 </head>
 
 <body id="index-body"> 
@@ -32,7 +31,7 @@
         </div>
 
         <div class="form-outer">
-            <form action="#">
+            <div class="form">
                 <!-- first question / amount -->
                 <div class="page" id="question1-amount">
                     <div class="field">
@@ -44,81 +43,104 @@
                         <div id="form-control">
                             <!-- <label for="dropdown"></label> REMOVE - SELECT ELEMENTS DO NOT NEED LABEL ELEMENTS-->
                             <!-- replace id with "currency" -->
-                            <select id="dropdown" class="label-control">
-                                <option value="">Choose Currency</option>
+                            <select id="currency" class="label-control">
+                                <option value="" selected disabled>Choose Currency</option>
                                 <option value="dollar">Dollar</option>
                                 <option value="pound">Pound</option>
                                 <option value="euro">Euro</option>
                             </select>
                         </div>
 
-                        <input type="text" id="user-input" name="user-input" placeholder="Please Enter Amount" aria-label="user-input" required="">
+                        <input type="number" id="amount" name="amount" placeholder="Please Enter Amount" aria-label="amount" required>
                     </div>
                     <!-- first button triggers JS to store value and display next question -->
                     <div class="field btns">
-                        <button id="first-next">Next</button>
+                        <button id="call-function-1" type="submit">Next</button>
                     </div>
                 </div>
                 <!-- second question / time -->
                 <div class="page" id="question2-time">
                     <div class="field">
-                        <div class="label">How much time do you have?</div>
-                        <div id="form-control">
-                            <!-- <label for="dropdown"></label>  -->
+                        <div class="label">How many weeks do you have?</div>
+                        <!-- <div id="form-control">
 
-                            <select id="dropdown" class="label-control">
+                            <select id="" class="label-control">
                                 <option value="">Choose time</option>
                                 <option value="dollar">Days</option>
                                 <option value="pound">Months</option>
                             </select>
-                        </div>
-                        <input type="text" id="user-input" name="user-input" placeholder="Please Enter Amount" aria-label="user-input" required="">
+                        </div> -->
+                        <input type="number" id="time" name="time" placeholder="Please Enter Amount" aria-label="time" required>
                     </div>
                     <div class="field btns">
-                        <button class="prev-1 prev">Previous</button>
                         <button class="next-1 next">Next</button>
                     </div>
                 </div>
                 <!-- third question / smoking habits smoking habits per pack of cigarettes -->
                 <div class="page" id="question3-smoke">
                     <div class="field">
-                        <div class="label">Do you smoke? if, so how many per day?</div>
-                        <div>
-                            <div class="question-three">
+                        <div class="label">Do you smoke?</div>
+                        <div class="question-three">
 
-                                <div>
-                                    <input type="radio" name="question-smoke-one" value="yes" id="yes"><label for="yes">Yes</label>
-                                    <input type="radio" name="question-smoke-one" value="no" id="no" checked="checked"><label for="no">No</label>
-                                </div>
+                            <div>
+                                <label for="smoke-yes">Yes</label>
+                                <input type="radio" name="smoke-radio" value="yes" id="smoke-yes">
 
-                                <div>
-                                    <input type="radio" name="question-smoke-two" value="1-5" id="1-5"><label for="1-5">1-5 per day</label>
-                                    <input type="radio" name="question-smoke-two" value="6-10" id="6-10"><label for="6-10">6-10 per day</label>
-                                    <input type="radio" name="question-smoke-two" value="11-20" id="11-20"><label for="11-20">11-20 per day</label>
-                                    <input type="radio" name="question-smoke-two" value="20+" id="20+"><label for="20+">20+ per day</label>
-                                    <input type="radio" name="question-smoke-two" value="n/a" id="n/a" checked="checked"><label for="n/a">N/A</label>           
-                                </div>
+                                <label for="smoke-no">No</label>
+                                <input type="radio" name="smoke-radio" value="no" id="smoke-no" checked>
                             </div>
-                            <div class="field btns">
-                                <button class="prev-2 prev">Previous</button>
-                                <button class="next-2 next">Next</button>
+
+                            <div id="smoke-amount-div">
+                                <div>How many packs per week?</div>
+
+                                <label for="1-pack-per-week">1 pack per week</label>
+                                <input type="radio" name="smoke-amount" value="1-pack-per-week" id="1-pack-per-week">
+                                
+                                <label for="1-pack-per-week">2 packs per week</label>
+                                <input type="radio" name="smoke-amount" value="2-pack-per-week" id="2-pack-per-week">
+
+                                <label for="1-pack-per-week">3 packs per week</label>
+                                <input type="radio" name="smoke-amount" value="3-pack-per-week" id="3-pack-per-week">
+
+                                <label for="1-pack-per-week">4 packs per week</label>
+                                <input type="radio" name="smoke-amount" value="4-pack-per-week" id="4-pack-per-week">
                             </div>
+                        </div>
+                        <div class="field btns">
+                            <button class="next-2 next">Next</button>
                         </div>
                     </div>
                 </div>
                 <!-- fourth question / drinking habits -->
                 <div class="page" id="question4-alcohol">
                     <div class="field">
-                        <div class="label">On average, how much do you spend on alcohol?</div>
+                        <div class="label">Do you drink alcohol?</div>
                         <div class="question-four">
-                            <input type="radio" name="question-alcohol" value="1-5" id="I-dont-drink" checked="checked"><label for="I-dont-drink">I don't drink</label>
-                            <input type="radio" name="question-alcohol" value="6-10" id="0-20"><label for="0-20">0-20 a week</label>
-                            <input type="radio" name="question-alcohol" value="11-20" id="21-50"><label for="21-50">21-50 a week</label>
-                            <input type="radio" name="question-alcohol" value="50+" id="50+"><label for="50+">50+ a week</label>
-                            <input type="radio" name="question-alcohol" value="~30" id="~30"><label for="~30">~30 a month</label>
-                            
+
+                            <div>
+                                <label for="alcohol-yes">Yes</label>
+                                <input type="radio" name="alcohol-radio" value="yes" id="alcohol-yes">
+
+                                <label for="alcohol-no">No</label>
+                                <input type="radio" name="alcohol-radio" value="no" id="alcohol-no" checked>
+                            </div>
+
+                            <div id="alcohol-amount-div">
+
+                                <div class="label">How many drinks per week?</div>
+
+                                <label for="0-20">0-20 a week</label>
+                                <input type="radio" name="alcohol-amount" value="6-10" id="0-20">
+
+                                <label for="21-50">21-50 a week</label>
+                                <input type="radio" name="alcohol-amount" value="11-20" id="21-50">
+
+                                <label for="50+">50+ a week</label>
+                                <input type="radio" name="alcohol-amount" value="50+" id="50+">
+
+                            </div>
+
                             <div class="field btns">
-                                <button class="prev-3 prev">Previous</button>
                                 <button class="next-3 next">Next</button>
                             </div>
                         </div>
@@ -127,16 +149,33 @@
                 <!-- fifth question / coffee habits per drink -->
                 <div class="page" id="question5-coffee">
                     <div class="field">
-                        <div class="label">How often do you buy coffee?</div>
+                        <div class="label">Do you buy coffee?</div>
                         <div class="question-five">
-                            <input type="radio" name="question-coffe" value="never" id="never"><label for="never">Never</label>
-                            <input type="radio" name="question-coffe" value="once" id="once"><label for="once">Once a day</label>
-                            <input type="radio" name="question-coffe" value="2-3" id="2-3"><label for="2-3">2-3 per day</label>
-                            <input type="radio" name="question-coffe" value="4+" id="way-too-much"><label for="way-too-much">Way too much(4+ per day)</label>
-                            <input type="radio" name="question-coffe" value="once-or-twice-a-week" id="once-or-twice"><label for="once-or-twice">Once or twice a week</label>
-                            
+                            <div>
+                                <label for="coffee-yes">Yes</label>
+                                <input type="radio" name="coffee-radio" value="yes" id="coffee-yes">
+
+                                <label for="coffee-no">No</label>
+                                <input type="radio" name="coffee-radio" value="no" id="coffee-no" checked>
+                            </div>
+
+                            <div>
+                                <div class="label">How many per day?</div>
+
+                                <label for="coffee-once">Once a day</label>
+                                <input type="radio" name="question-coffee" value="1" id="coffee-once">
+
+                                <label for="coffee-twice">Twice per day</label>
+                                <input type="radio" name="question-coffee" value="2" id="coffee-twice">
+
+                                <label for="coffee-three">Three times per day</label>
+                                <input type="radio" name="question-coffee" value="3" id="coffee-three">
+
+                                <label for="coffee-four">Four times per day</label>
+                                <input type="radio" name="question-coffee" value="4" id="coffee-four">
+                            </div>
+
                             <div class="field btns">
-                                <button class="prev-4 prev">Previous</button>
                                 <button class="next-4 next">Next</button>
                             </div>
                         </div>
@@ -145,15 +184,35 @@
                 <!-- sixth question / clothes shopping -->
                 <div class="page" id="question6-clothing">
                     <div class="field">
-                        <div class="label">How much do you spend on clothing?</div>
+                        <div class="label">Do you go clothes shopping?</div>
                         <div class="question-six">
-                            <input type="radio" name="question-clothing" value="0-50" id="0-50"><label for="0-50">0-50 a month (I only get my most basic needs)</label>
-                            <input type="radio" name="question-clothing" value="50-150" id="50-150"><label for="50-150">50-150 a month (I shop on occasion!)</label>
-                            <input type="radio" name="question-clothing" value="150-300" id="150-300"><label for="150-300">150-300 a month (I LOVE shopping!)</label>
-                            <input type="radio" name="question-clothing" value="300+" id="300+"><label for="300+">300+ a month (I LOOOVEEE shopping!)</label>
-                            
+
+                            <div>
+                                <label for="clothes-yes">Yes</label>
+                                <input type="radio" name="clothes-radio" value="yes" id="clothes-yes">
+
+                                <label for="clothes-no">No</label>
+                                <input type="radio" name="clothes-radio" value="no" id="clothes-no" checked>
+                            </div>
+
+                            <div id="clothes-amount-div">
+
+                                <div class="label">How much do you spend per week?</div>
+
+                                <label for="0-50">0-50 a month (I only get my most basic needs)</label>
+                                <input type="radio" name="clothes-amount" value="0-50" id="0-50">
+
+                                <label for="50-150">50-150 a month (I shop on occasion!)</label>
+                                <input type="radio" name="clothes-amount" value="50-150" id="50-150">
+
+                                <label for="150-300">150-300 a month (I LOVE shopping!)</label>
+                                <input type="radio" name="clothes-amount" value="150-300" id="150-300">
+
+                                <label for="300+">300+ a month (I LOOOVEEE shopping!)</label>
+                                <input type="radio" name="clothes-amount" value="300+" id="300+">
+                            </div>
+
                             <div class="field btns">
-                                <button class="prev-5 prev">Previous</button>
                                 <button class="next-5 next">Next</button>
                             </div>
                         </div>
@@ -162,29 +221,43 @@
                 <!-- seventh question / lottery ticket purchases -->
                 <div class="page" id="question7-lottery">
                     <div class="field">
-                        <div class="label">Do you play the lottery</div>
+                        <div class="label">Do you play the lottery?</div>
                         <div class="question-seven">
                             <div>
-                                <input type="radio" name="question-lottery-one" value="yes" id="yes"><label for="yes">Yes</label>
-                                <input type="radio" name="question-lottery-one" value="no" id="no" checked="checked"><label for="no">No</label>
+                                <label for="lottery-yes">Yes</label>
+                                <input type="radio" name="lottery-radio" value="yes" id="lottery-yes">
+
+                                <label for="lottery-no">No</label>
+                                <input type="radio" name="lottery-radio" value="no" id="lottery-no" checked>
                             </div>
-                            <div>
-                                <input type="radio" name="question-lottery-two" value="1-5" id="1-5"><label for="1-5">1-5 times months (occasionally)</label>
-                                <input type="radio" name="question-lottery-two" value="6-10" id="6-10"><label for="6-10">Every week (same numbers - I believe!)</label>
-                                <input type="radio" name="question-lottery-two" value="11-20" id="11-20"><label for="11-20">2-5 tickes per week (I believe in increasing my odds!)</label>
-                                <input type="radio" name="question-lottery-two" value="20+" id="20+"><label for="20+">5+ tickets a week (playing the numbers game!)</label>
-                                <input type="radio" name="question-lottery-two" value="n/a" id="n/a" checked="checked"><label for="n/a">N/A</label>
+                            <div id="lottery-amount-div">
+
+                                <div class="label">How many tickets per week? Select the number that best applies</div>
+                                <label for="1-tickets">1 ticket</label>
+                                <input type="radio" name="lottery-amount" value="1" id="1-ticket" checked>
+
+                                <label for="3-tickets">3 tickets</label>
+                                <input type="radio" name="lottery-amount" value="3" id="3-tickets">
+
+                                <label for="5-tickets"></label>
+                                <input type="radio" name="lottery-amount" value="5" id="5-tickets">
+
+                                <label for="7-tickets"></label>
+                                <input type="radio" name="lottery-amount" value="7" id="7-tickets">
+
+                                <label for="10-tickets"></label>
+                                <input type="radio" name="lottery-amount" value="10" id="10-tickets">
+
                             </div>
                             <div class="field btns">
-                                <button class="prev-6 prev">Previous</button>
                                 <button class="next-6 next">Submit</button>
                             </div>
                         </div>
                     </div>
                 </div>
-            </form>
+            </div>
         </div>
-
+        
         <footer class="footer-wrapper">
             <div class="team-b">
                 <h6>Project built by Team Broke Buster</h6>
@@ -196,5 +269,7 @@
         </footer>
 
     </div>
+
+    <script type="text/javascript" src="assets/script.js"></script>
 </body>
 </html>
