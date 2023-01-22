@@ -227,6 +227,10 @@ The second frame shows an increasing progress bar with question to how much the 
 
 * **TEAM - BROKE BUSTERS!**
 
+* Scrum Master
+
+    * Destan Tezel
+
 * Front end designers 
     
     * Rashidat Adekoya
