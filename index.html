@@ -41,7 +41,6 @@
                         
                         <!-- dropdown area for currency selection & API -->
                         <div id="form-control">
-                            <!-- <label for="dropdown"></label> REMOVE - SELECT ELEMENTS DO NOT NEED LABEL ELEMENTS-->
                             <!-- replace id with "currency" -->
                             <select id="currency" class="label-control">
                                 <option value="" selected disabled>Choose Currency</option>
@@ -55,60 +54,60 @@
                     </div>
                     <!-- first button triggers JS to store value and display next question -->
                     <div class="field btns">
-                        <button id="call-function-1" type="submit">Next</button>
+                        <button id="amount-function">Next</button>
                     </div>
                 </div>
                 <!-- second question / time -->
                 <div class="page" id="question2-time">
                     <div class="field">
                         <div class="label">How many weeks do you have?</div>
-                        <!-- <div id="form-control">
-
-                            <select id="" class="label-control">
-                                <option value="">Choose time</option>
-                                <option value="dollar">Days</option>
-                                <option value="pound">Months</option>
-                            </select>
-                        </div> -->
                         <input type="number" id="time" name="time" placeholder="Please Enter Amount" aria-label="time" required>
                     </div>
                     <div class="field btns">
-                        <button class="next-1 next">Next</button>
+                        <button class="next-1 next" id="time-function">Next</button>
                     </div>
                 </div>
                 <!-- third question / smoking habits smoking habits per pack of cigarettes -->
                 <div class="page" id="question3-smoke">
                     <div class="field">
-                        <div class="label">Do you smoke?</div>
-                        <div class="question-three">
+                        <div class="label">
+                            Do you smoke?
+                        </div>
 
-                            <div>
-                                <label for="smoke-yes">Yes</label>
+                        <div>
+                            <div id="smoke-yes-no-div">
                                 <input type="radio" name="smoke-radio" value="yes" id="smoke-yes">
+                                <label for="smoke-yes">Yes</label>
 
+                                <input type="radio" name="smoke-radio" value="no" id="smoke-no">
                                 <label for="smoke-no">No</label>
-                                <input type="radio" name="smoke-radio" value="no" id="smoke-no" checked>
+
+                                <div class="field btns">
+                                    <button class="next-2 next" id="smoke-yes-no">Next</button>
+                                </div>
                             </div>
 
                             <div id="smoke-amount-div">
                                 <div>How many packs per week?</div>
 
-                                <label for="1-pack-per-week">1 pack per week</label>
                                 <input type="radio" name="smoke-amount" value="1-pack-per-week" id="1-pack-per-week">
+                                <label for="1-pack-per-week">1 pack per week</label>
                                 
-                                <label for="1-pack-per-week">2 packs per week</label>
                                 <input type="radio" name="smoke-amount" value="2-pack-per-week" id="2-pack-per-week">
-
-                                <label for="1-pack-per-week">3 packs per week</label>
+                                <label for="1-pack-per-week">2 packs per week</label>
+                                
                                 <input type="radio" name="smoke-amount" value="3-pack-per-week" id="3-pack-per-week">
-
-                                <label for="1-pack-per-week">4 packs per week</label>
+                                <label for="1-pack-per-week">3 packs per week</label>
+                                
                                 <input type="radio" name="smoke-amount" value="4-pack-per-week" id="4-pack-per-week">
+                                <label for="1-pack-per-week">4 packs per week</label>
+                                
+                                <div class="field btns">
+                                    <button class="next-2 next" id="smoke-amount-button">Next</button>
+                                </div>
                             </div>
                         </div>
-                        <div class="field btns">
-                            <button class="next-2 next">Next</button>
-                        </div>
+                        
                     </div>
                 </div>
                 <!-- fourth question / drinking habits -->
@@ -117,32 +116,39 @@
                         <div class="label">Do you drink alcohol?</div>
                         <div class="question-four">
 
-                            <div>
-                                <label for="alcohol-yes">Yes</label>
+                            <div id="alcohol-yes-no-div">
                                 <input type="radio" name="alcohol-radio" value="yes" id="alcohol-yes">
-
-                                <label for="alcohol-no">No</label>
+                                <label for="alcohol-yes">Yes</label>
+                                
                                 <input type="radio" name="alcohol-radio" value="no" id="alcohol-no" checked>
+                                <label for="alcohol-no">No</label>
+
+                                <div class="field btns">
+                                    <button class="next-3 next" id="alcohol-yes-no">Next</button>
+                                </div>
+                                
                             </div>
 
                             <div id="alcohol-amount-div">
 
                                 <div class="label">How many drinks per week?</div>
 
-                                <label for="0-20">0-20 a week</label>
                                 <input type="radio" name="alcohol-amount" value="6-10" id="0-20">
-
-                                <label for="21-50">21-50 a week</label>
+                                <label for="0-20">0-20 a week</label>
+                                
                                 <input type="radio" name="alcohol-amount" value="11-20" id="21-50">
-
-                                <label for="50+">50+ a week</label>
+                                <label for="21-50">21-50 a week</label>
+                                
                                 <input type="radio" name="alcohol-amount" value="50+" id="50+">
+                                <label for="50+">50+ a week</label>
+
+                                <div class="field btns">
+                                    <button class="next-3 next" id="alcohol-amount-button">Next</button>
+                                </div>
 
                             </div>
 
-                            <div class="field btns">
-                                <button class="next-3 next">Next</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -151,33 +157,40 @@
                     <div class="field">
                         <div class="label">Do you buy coffee?</div>
                         <div class="question-five">
-                            <div>
-                                <label for="coffee-yes">Yes</label>
+                            <div id="coffee-yes-no-div">
                                 <input type="radio" name="coffee-radio" value="yes" id="coffee-yes">
+                                <label for="coffee-yes">Yes</label>
 
-                                <label for="coffee-no">No</label>
                                 <input type="radio" name="coffee-radio" value="no" id="coffee-no" checked>
+                                <label for="coffee-no">No</label>
+
+                                <div class="field btns">
+                                    <button class="next-4 next" id="coffee-yes-no">Next</button>
+                                </div>
+                                
                             </div>
 
-                            <div>
+                            <div id="coffee-amount-div">
                                 <div class="label">How many per day?</div>
 
+                                <input type="radio" name="coffee-amount" value="1" id="coffee-once">
                                 <label for="coffee-once">Once a day</label>
-                                <input type="radio" name="question-coffee" value="1" id="coffee-once">
-
+                                
+                                <input type="radio" name="coffee-amount" value="2" id="coffee-twice">
                                 <label for="coffee-twice">Twice per day</label>
-                                <input type="radio" name="question-coffee" value="2" id="coffee-twice">
-
+                                
+                                <input type="radio" name="coffee-amount" value="3" id="coffee-three">
                                 <label for="coffee-three">Three times per day</label>
-                                <input type="radio" name="question-coffee" value="3" id="coffee-three">
-
+                                
+                                <input type="radio" name="coffee-amount" value="4" id="coffee-four">
                                 <label for="coffee-four">Four times per day</label>
-                                <input type="radio" name="question-coffee" value="4" id="coffee-four">
+                                
+                                <div class="field btns">
+                                    <button class="next-4 next" id="coffee-amount-button">Next</button>
+                                </div>
                             </div>
 
-                            <div class="field btns">
-                                <button class="next-4 next">Next</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -187,34 +200,41 @@
                         <div class="label">Do you go clothes shopping?</div>
                         <div class="question-six">
 
-                            <div>
-                                <label for="clothes-yes">Yes</label>
+                            <div id="clothes-yes-no-div">
                                 <input type="radio" name="clothes-radio" value="yes" id="clothes-yes">
-
-                                <label for="clothes-no">No</label>
+                                <label for="clothes-yes">Yes</label>
+                                
                                 <input type="radio" name="clothes-radio" value="no" id="clothes-no" checked>
+                                <label for="clothes-no">No</label>
+
+                                <div class="field btns">
+                                    <button class="next-5 next" id="clothes-yes-no">Next</button>
+                                </div>
+                                
                             </div>
 
                             <div id="clothes-amount-div">
 
                                 <div class="label">How much do you spend per week?</div>
 
-                                <label for="0-50">0-50 a month (I only get my most basic needs)</label>
                                 <input type="radio" name="clothes-amount" value="0-50" id="0-50">
-
-                                <label for="50-150">50-150 a month (I shop on occasion!)</label>
+                                <label for="0-50">0-50 a month (I only get my most basic needs)</label>
+                                
                                 <input type="radio" name="clothes-amount" value="50-150" id="50-150">
-
-                                <label for="150-300">150-300 a month (I LOVE shopping!)</label>
+                                <label for="50-150">50-150 a month (I shop on occasion!)</label>
+                                
                                 <input type="radio" name="clothes-amount" value="150-300" id="150-300">
-
-                                <label for="300+">300+ a month (I LOOOVEEE shopping!)</label>
+                                <label for="150-300">150-300 a month (I LOVE shopping!)</label>
+                                
                                 <input type="radio" name="clothes-amount" value="300+" id="300+">
+                                <label for="300+">300+ a month (I LOOOVEEE shopping!)</label>
+                                
+                                <div class="field btns">
+                                    <button class="next-5 next" id="clothes-amount-button">Next</button>
+                                </div>
                             </div>
 
-                            <div class="field btns">
-                                <button class="next-5 next">Next</button>
-                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -223,43 +243,54 @@
                     <div class="field">
                         <div class="label">Do you play the lottery?</div>
                         <div class="question-seven">
-                            <div>
-                                <label for="lottery-yes">Yes</label>
-                                <input type="radio" name="lottery-radio" value="yes" id="lottery-yes">
+                            <div id="lottery-yes-no-div">
 
-                                <label for="lottery-no">No</label>
+                                <input type="radio" name="lottery-radio" value="yes" id="lottery-yes">
+                                <label for="lottery-yes">Yes</label>
+                                
                                 <input type="radio" name="lottery-radio" value="no" id="lottery-no" checked>
+                                <label for="lottery-no">No</label>
+
+                                <div class="field btns">
+                                    <button class="next-6 next" id="lottery-yes-no">Submit</button>
+                                </div>
+                                
                             </div>
                             <div id="lottery-amount-div">
 
                                 <div class="label">How many tickets per week? Select the number that best applies</div>
-                                <label for="1-tickets">1 ticket</label>
+
                                 <input type="radio" name="lottery-amount" value="1" id="1-ticket" checked>
-
-                                <label for="3-tickets">3 tickets</label>
+                                <label for="1-tickets">1 ticket</label>
+                                
                                 <input type="radio" name="lottery-amount" value="3" id="3-tickets">
-
-                                <label for="5-tickets"></label>
+                                <label for="3-tickets">3 tickets</label>
+                                
                                 <input type="radio" name="lottery-amount" value="5" id="5-tickets">
-
-                                <label for="7-tickets"></label>
+                                <label for="5-tickets"></label>
+                                
                                 <input type="radio" name="lottery-amount" value="7" id="7-tickets">
-
-                                <label for="10-tickets"></label>
+                                <label for="7-tickets"></label>
+                                
                                 <input type="radio" name="lottery-amount" value="10" id="10-tickets">
-
+                                <label for="10-tickets"></label>
+                                
+                                <div class="field btns">
+                                    <button class="next-6 next" id="lottery-amount-button">Submit</button>
+                                </div>
                             </div>
-                            <div class="field btns">
-                                <button class="next-6 next">Submit</button>
-                            </div>
+                            
                         </div>
                     </div>
+                </div>
+                <div class="page" id="final-output">
+
                 </div>
             </div>
         </div>
         
         <footer class="footer-wrapper">
-            <div class="team-b">
+            <div class="team-8">
                 <h6>Project built by Team Broke Buster</h6>
                 <p>January 2023 Hackathon.</p>
             </div>

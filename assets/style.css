@@ -180,9 +180,32 @@ body{
     display: none;
 }
 
-#smoke-amount-div,
-#alcohol-amount-div,
-#coffee-amount-div,
-#clothes-amount-div {
+#smoke-yes-no-div,
+#smoke-amount-div
+{
+    display: none;
+}
+
+#alcohol-yes-no-div,
+#alcohol-amount-div
+{
+    display: none;
+}
+
+#coffee-yes-no-div,
+#coffee-amount-div
+{
+    display: none;
+}
+
+#clothes-yes-no-div,
+#clothes-amount-div
+{
+    display: none;
+}
+
+#lottery-yes-no-div,
+#lottery-amount-div
+{
     display: none;
 }

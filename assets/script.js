@@ -3,7 +3,26 @@
 // DOM content loaded event listener, delays activation of JS functions until DOM loaded
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM Loaded")
-    document.getElementById("call-function-1").addEventListener('click', question1);
+
+    document.getElementById("amount-function").addEventListener('click', question1);
+    document.getElementById('time-function').addEventListener('click', question2);
+
+    document.getElementById('smoke-yes-no').addEventListener('click', question3YesNo);
+    document.getElementById('smoke-amount-button').addEventListener('click', question3Amount);
+
+    document.getElementById('alcohol-yes-no').addEventListener('click', question4YesNo);
+    document.getElementById('alcohol-amount-button').addEventListener('click', question4Amount);
+
+    document.getElementById('coffee-yes-no').addEventListener('click', question5YesNo);
+    document.getElementById('coffee-amount-button').addEventListener('click', question5Amount);
+
+    document.getElementById('clothes-yes-no').addEventListener('click', question6YesNo);
+    document.getElementById('clothes-amount-button').addEventListener('click', question6Amount);
+
+    document.getElementById('lottery-yes-no').addEventListener('click', question7YesNo);
+    document.getElementById('lottery-amount-button').addEventListener('click', question7Amount);
+
+    document.getElementById('call-function-final').addEventListener('click', final);
 })
 
 // Global-scoped object that holds data about a user
@@ -60,17 +79,12 @@ function question1() {
     console.log(`userData object has values: ${userData}`)
 
     question_1.style.display = 'none'
-    // call next function
-    question2();
+    question_2.style.display = 'block'
 }
 
 // question 2 - relates to wireframe question-2.png
 function question2() {
-
-    // hide question1 element, show question2 element
-    question_1.style.display = 'none'
-    question_2.style.display = 'block'
-
+    
     // variable assignment
     let time = document.getElementById('time').value //points to time input element
 
@@ -86,44 +100,34 @@ function question2() {
     // log out userData object
     console.log(`userData object has values: ${userData}`)
 
-    // call next function
-    question3()
-}
-
-// question 3 - relates to question-3.png, grabs smoke amount
-function question3() {
-    
     question_2.style.display = 'none'
     question_3.style.display = 'block'
+}
 
-    let smokeRadioSelect = document.getElementsByName('smoke-radio').value
-    // here we need to see what the user has selected.
-    // by default, the "No" radio button is selected, so the amount of cigarettes radio selet form is hidden by the CSS
-    // if the user selects "Yes", the amount of cigarettes form should show
-    // radio buttons are input elements with type=radio, and can accept a value attribute, so we should be able to grab its value
-    let smokeAmountRadioForm = document.getElementById('smoke-amount-div')
+function question3YesNo() {
 
     // update progress-bar length to 28%
     progressBar = '28%'
-    
-    if (smokeRadioSelect == 'yes') {
-        smokeAmountRadioForm.style.display = 'block'
-        // block not set in stone - will need to change based on CSS design
+
+    let smokeYes = document.getElementById('smoke-yes')
+    let smokeNo = document.getElementById('smoke-no')
+
+    if (smokeYes.checked) {
+        document.getElementById('smoke-yes-no-div').style.display = 'hide'
+        document.getElementById('smoke-amount-div').style.display = 'block'
         userData['smoke'] = true
         console.log(`Does smoke`)
     }
-
-    if (smokeRadioSelect == 'no' ){
-        smokeAmountRadioForm.style.display = 'none'
+    else if (smokeNo.checked) {
+        document.getElementById('smoke-yes-no-div').style.display = 'hide'
+        document.getElementById('alcohol-yes-no-div').style.display = 'block'
         userData['smoke'] = false
         console.log(`Does not smoke`)
     }
-    
-    // radio buttons for selecting amount of cigarettes the user smokes
-    // Would this be easier with a select element and several child option elements?
-    // easier to get value
-    // can do with radio inputs and a for loop - https://www.geeksforgeeks.org/how-to-get-value-of-selected-radio-button-using-javascript/
-    // all radio inputs must have the name attribute with the same attribute value of smoke-amount
+}
+
+function question3Amount() {
+
     let smokeAmount = document.getElementsByName('smoke-amount') // this is a list []
 
     // iterate over the list above
@@ -137,16 +141,14 @@ function question3() {
 
     console.log(`userData object has values: ${userData}`)
 
-    question4()
-}
-
-// question4 - relates to question-4.png
-function question4() {
-    // very similar approach to question 3
-
-    // hide question 3 element, show question 4 element
     question_3.style.display = 'none'
     question_4.style.display = 'block'
+}
+
+function question4YesNo() {}
+
+// question4 - relates to question-4.png
+function question4Amount() {
     
     // variable assignment
     let alcoholRadioSelect = document.getElementsByName('alcohol-radio') // alcohol yes-no radio select
@@ -179,19 +181,17 @@ function question4() {
         }
     }
 
-    alcohol.style.display = 'none'
-
     console.log(`userData object has values: ${userData}`)
 
-    question5()
+    question_4.style.display = 'none'
+    question_5.style.display = 'block'
 }
+
+function question5YesNo() {}
 
 // question 5 - relates to question-5.png
 // coffee is a placeholder for a hot drink - tea, hot chocolate, etc
-function question5() {
-    // hide question 4 element, show question 5 element
-    question_4.style.display = 'none'
-    question_5.style.display = 'block'
+function question5Amount() {
 
     // variable assignment
     let coffeeRadioSelect = document.getElementsByName('coffee-radio') // coffee yes-no radio selector
@@ -227,13 +227,13 @@ function question5() {
     // log out userData object values
     console.log(`userData object has values: ${userData}`)
 
-    question6()
-}
-
-function queston6() {
-    // hide question 5 element, show question 6 element
     question_5.style.display = 'none'
     question_6.style.display = 'block'
+}
+
+function question6YesNo(){}
+
+function question6Amount() {
 
     // variable assignment
     let clothingRadioSelect = document.getElementsByName('clothes-radio') // coffee yes-no radio selector
@@ -269,13 +269,13 @@ function queston6() {
     // log out userData object values
     console.log(`userData object has values: ${userData}`)
 
-    question7()
-}
-
-function question7() {
-    // hide question 6 element, show question 7 element
     question_6.style.display = 'none'
     question_7.style.display = 'block'
+}
+
+function question7YesNo() {}
+
+function question7Amount() {
 
     // variable assignment
     let lotteryRadioSelect = document.getElementById('lottery-radio') // lottery yes-no radio selector
@@ -311,7 +311,8 @@ function question7() {
     // log out userData object values
     console.log(`userData object has values: ${userData}`)
 
-    final()
+    question_7.style.display = 'none'
+    finalOutput.style.display = 'block'
 }
 
 // Final function
@@ -328,10 +329,6 @@ function question7() {
 // £2.50 per ticket
 
 function final() {
-
-    // hide question 7 element, show final output
-    question_7.style.display = 'none'
-    finalOutput.style.display = 'block'
 
     // update progressBar to 100%
     progressBar = '100%'
