@@ -16,7 +16,7 @@
     justify-content: center;
 }
   
-.logo {
+  .logo {
     height: 400px;
     width: 400px;
     display: flex;
@@ -56,9 +56,9 @@ body{
     background-color: #8BD7D2;
     font-size: 16px;
 }
-.container{
+  .container{
     padding: 0px 35px 10px 35px;
-}
+  }
 
 .container header{
     font-size: 35px;
@@ -148,8 +148,9 @@ form .page .btns button.next{
 .slogan {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    font-size: x-large;
+    /* padding: 20px; */
+    /* font-size: x-large; */
+    font-size: 1.8rem;
     color: #49C6E5;
     font-weight: bold;
 }
@@ -169,4 +170,5 @@ form .page .btns button.next{
     background-color: #54DEFD;
     text-align: center;
     font-weight: 200;
-}
+  }
+  
