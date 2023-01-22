@@ -17,8 +17,10 @@
   }
   
   .logo {
-    height: 400px;
-    width: 400px;
+    /* height: 400px;
+    width: 400px; */
+    height: 300px;
+    width: 300px;
     display: flex;
   }  
   
@@ -57,7 +59,8 @@
     font-size: 16px;
 }
   .container{
-    padding: 0px 35px 10px 35px;
+    /* padding: 0px 35px 10px 35px; */
+    margin: 0px 35px 10px 35px;
   }
 
   .container header{
@@ -148,8 +151,9 @@
   .slogan {
     display: flex;
     justify-content: center;
-    padding: 20px;
-    font-size: x-large;
+    /* padding: 20px; */
+    /* font-size: x-large; */
+    font-size: 1.8rem;
     color: #49C6E5;
     font-weight: bold;
   }
@@ -171,3 +175,13 @@
     font-weight: 200;
   }
   
+/* ----Media Query-- */
+@media only screen and (min-width: 400px){
+
+  #main-container {
+   width: 90%;
+   margin-left: 30%;
+   margin-right: 5%;
+  }
+
+}
