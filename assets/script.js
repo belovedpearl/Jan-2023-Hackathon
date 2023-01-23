@@ -59,7 +59,7 @@ function question1() {
     // let currency = document.getElementById('currency').value //point to currency input element
     let amount = document.getElementById('amount').value // points to amount input element
 
-    if(amount == 0) {
+    if(amount <= 0) {
         alert('Please enter an amount')
     }
     else {

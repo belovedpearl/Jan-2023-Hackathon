@@ -24,18 +24,6 @@ body{
     min-height: 100vh;
 }
 
-/* #progress-bar {
-    background-color: #8BD7D2;
-}
-
-.progress {
-    height: 80px;
-    border-radius: 10px;
-    width: 300px;
-    margin: 50px auto;
-    padding: 15px;
-} */
-
 .determinate {
     height: 100%;
     width: 100%;
@@ -106,7 +94,7 @@ body{
 .form .page .field button:hover{
     background: #54DEFD;
     color: black;
-    font-size: 22px;
+    font-size: 20px;
 }
 .form .page .btns button{
     margin-top: -20px!important;
