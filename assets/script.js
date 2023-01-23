@@ -309,7 +309,7 @@ function question6YesNo(){
 
 function question6Amount() {
 
-    let clothingAmount = document.getElementsByName('clothing-amount')
+    let clothingAmount = document.getElementsByName('clothes-amount')
 
     if (clothingAmount.length == 0){
         alert('please select an option')
