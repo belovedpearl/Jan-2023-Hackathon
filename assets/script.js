@@ -482,7 +482,8 @@ function final() {
 
     //get a random number between 0 and and the integer length of the array
     // so between 0 and 3 if the array is 3 elements long
-    random = Math.floor(Math.random() * length) + 1
+    random = Math.floor(Math.random() * length)
+    console.log(random)
     // between 1 and 5 if user smokes, drinks, coffees, shops and lotterys
 
     // use the random number to get an associated random index of the active_elements array
@@ -497,7 +498,7 @@ function final() {
         finalOutput.innerText = `You're pretty frugal! The Penny Smart Tool can't find you any savings.`
     }
     else {
-        finalOutput.innerText = `The Penny Smart tool recommends that you give up ${suggestion} ${suggestion_string} for ${time} weeks to save £${amountToSave}`
+        finalOutput.innerText = `The Penny Smart tool recommends that you give up ${Math.ceil(suggestion)} ${suggestion_string} for ${time} weeks to save £${amountToSave}`
     }
 
     // this should inject "The Penny Smart tool recommends that you give up 10 fewer cups of coffee over 5 weeks to save 50 pounds"
