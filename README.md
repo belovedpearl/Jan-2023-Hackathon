@@ -20,7 +20,6 @@
     * [Radio Buttons](#radio-buttons)
     * [Personality Questions](#personality-questions)
     * [Currency Converter](#currency-converter) 
-* [Accessbility](#accessibility)
 * [Design Choices](#design-choices)
     * [Font](#font)
     * [Unified Colour Schemes](#unified-colour-scheme)
@@ -47,7 +46,7 @@ Initially the plan was to have a user sign up using a page linked to a nav bar, 
 
 Having done some mild research on "useless expenses" we wanted the user to take a quick personality test to identify some of these key areas. This would allow our built in functions, in JavaScript, to randomly generate user specific answers linked to their lifestyle spending: Highlighting how the individual can save money over a chosen period of time. For instance: How often does the user buy a cup of coffee and or how often the user smokes, in turn this will generate the weekly cost in either Sterling, Dollars or Euros. The results page will then present the user with randomised (lesser) amounts of each, in order to save the user the amount of money in the chosen amount of time.
 
-The application will interact with an API in order to have real-time exchange values between Sterling, Dollars and Euros.
+The application will interact with an API in order to have real-time exchange values between Sterling, Dollars and Euros (unfortunately due to unforseen circumstances we couldn't get the functionality of the API to work).
 
 
 ### Concept 
@@ -156,8 +155,6 @@ The landing page will ask the user how much money they would like to save and a 
 * #### Currency Converter
     *  Using an API we will display real time conversions between Sterling, Dollars and Euros.
 
-## Accessibility
----
 
 ## Design Choices
 ---
@@ -184,8 +181,6 @@ The landing page will ask the user how much money they would like to save and a 
 * JavaScript
 
 * CSS
-
-* API
 
 ### Frameworks and Programs
 
@@ -222,7 +217,7 @@ The landing page will ask the user how much money they would like to save and a 
 ## Credits
 ---
 
-* **TEAM - THE BROKE BUSTERS!**
+* **TEAM - BROKE BUSTERS!**
 
 * Scrum Master
 
