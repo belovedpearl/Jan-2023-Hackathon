@@ -201,3 +201,10 @@ body{
 #final-output {
     display: none;
 }
+
+@media only screen and (max-width: 400px) {
+  .logo {
+    height: 180px;
+    width: 180px;
+} 
+}
