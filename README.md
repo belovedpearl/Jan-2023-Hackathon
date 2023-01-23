@@ -1,5 +1,4 @@
 # Penny Smart - *Revolutionising Finance for 2023*
-[View the live project here.](https://adamboley.github.io/Jan-2023-Hackathon/)
 
 **Table of Contents:**
 ---
@@ -22,15 +21,12 @@
 * [Accessbility](#accessibility)
 * [Design Choices](#design-choices)
     * [Font](#font)
-    * [Images](#images)
-    * [Widgets](#widgets)
     * [Unified Colour Schemes](#unified-colour-scheme)
 * [Technology, Frameworks and Programs](#technology-frameworks-and-programs)
     * [Languages](#languages)
     * [Frameworks and Programs](#frameworks-and-programs)
 * [Bugs](#bugs)
 * [Deployment](#deployment)
-    * [User Interaction](#user-interaction)
 * [Testing](#testing)
 * [Credits](#credits)
     * [Resources](#resources-used)
@@ -149,11 +145,11 @@ The landing page will ask the user how much money they would like to save and a 
 * #### Peronality Questions
     * How much would you like to save?
     * How much time do you have?
-    * Do you smoke? if, so how many per day?
-    * On average, how much do you spend on alcohol?
-    * How often do you buy coffee?
-    * How much do you spend on clothing?
-    * Do you play the lottery?
+    * Do you smoke? if, how many packs per week?
+    * do you drink? how many drinks per week?
+    * Do you buy coffee? How many per day?
+    * Do you go clothes shopping? How much do you spend per month?
+    * Do you play the lottery? How many tickets per week?
 
 * #### Currency Converter
     *  Using an API we will display real time conversions between Sterling, Dollars and Euros.
@@ -170,11 +166,11 @@ The landing page will ask the user how much money they would like to save and a 
 ### Font
 ---
 
-### Images
----
+* Sans-serif
+    * Evokes a clean minimal style, keeping it friendly and modern.
+* Exo-Bold and Helvetica
+    * The logo utilised two different fonts to keep it stylised and eye catching.
 
-### Widgets 
----
 
 ## Technology, Frameworks and Programs
 ---
@@ -204,7 +200,7 @@ The landing page will ask the user how much money they would like to save and a 
 ---
 
 * Radio buttons
-    * During a huddle team talk we realised that our radio buttons were not appearing, once rendered. We discovered that the label element was missing from the syntax and because we were using Materialize it required an input as a child element. This was fixed
+    * During a huddle team talk we realised that our radio buttons were not appearing, once rendered. We discovered that the label element was missing from the syntax and because we were using Materialize it required an input as a child element. This was fixed. However, we then ran into further complications and had to put the input before the labels to fix the bug of the radio button dissapearing.
 * Materialize
     * Being guided by our experienced group members, we all learnt that Materialize works on a grid basis. This caused problems in trying to centre our text on the navigation bar, where originally we were going to have a sign up link. However, the bugs would have needed specific media queries to iron it out and that would have been better achieved at the start of the project, we took the creative choice to drop the sign up option and present our application as more of a tool.
 
@@ -212,10 +208,12 @@ The landing page will ask the user how much money they would like to save and a 
 ---
 * The project will be deployed on github, we believed this to be the least complex method allowing us to showcase our project.
 
-### User Interaction
----
 ## Testing
 ---
+
+* Lighthouse
+    * Results: 
+
 ## Credits
 ---
 
