@@ -1,5 +1,7 @@
 # Penny Smart - *Revolutionising Finance for 2023*
 
+[View the live project here](https://adamboley.github.io/Jan-2023-Hackathon/)
+
 **Table of Contents:**
 ---
 ---
@@ -211,13 +213,16 @@ The landing page will ask the user how much money they would like to save and a 
 ## Testing
 ---
 
-* Lighthouse
-    * Results: 
+* Lighthouse results: 
+    * Performance = 100 
+    * Accessibility = 97 
+    * Best Practices = 92
+    * SEO = 90
 
 ## Credits
 ---
 
-* **TEAM - BROKE BUSTERS!**
+* **TEAM - BROKE BUSTER!**
 
 * Scrum Master
 
