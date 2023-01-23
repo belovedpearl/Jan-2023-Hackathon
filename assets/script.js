@@ -56,7 +56,6 @@ let question_5 = document.getElementById('question5-coffee') // coffee question 
 let question_6 = document.getElementById('question6-clothing') // clothing question wrapper div
 let question_7 = document.getElementById('question7-lottery') // lottery question wrapper div
 let finalOutput = document.getElementById('final-output') // final output wrapper div
-let progressBar = document.getElementById('progress-bar')
 // question 1 - relates to wireframe question-1.png
 // question-1 HTML is displayed by default
 function question1() {
@@ -71,7 +70,7 @@ function question1() {
     console.log(`amount is ${amount}`)
 
     // update progress-bar length to 0%
-    progressBar.style.width = '14%'
+    document.getElementById('progress-bar').style.width = '14%'
     
     // update userData object and log value to console
     userData['currency'] = currency
@@ -92,7 +91,7 @@ function question2() {
     console.log(`time value is ${time}`)
 
     // update progress-bar length to 14%
-    progressBar.style.width = '28%'
+    document.getElementById('progress-bar').style.width = '28%'
 
     // update userData object and log value to console
     userData['time'] = time
@@ -108,7 +107,7 @@ function question2() {
 function question3YesNo() {
 
     // update progress-bar length to 28%
-    progressBar = '42%'
+    document.getElementById('progress-bar').style.width = '42%'
 
     let smokeYes = document.getElementById('smoke-yes')
     let smokeNo = document.getElementById('smoke-no')
@@ -149,7 +148,7 @@ function question3Amount() {
 }
 
 function question4YesNo() {
-    progressBar.style.width = '56%'
+    document.getElementById('progress-bar').style.width = '56%'
 
     let alcoholYes = document.getElementById('alcohol-yes')
     let alcoholNo = document.getElementById('alcohol-no')
@@ -191,7 +190,7 @@ function question4Amount() {
 }
 
 function question5YesNo() {
-    progressBar.style.width = '70%'
+    document.getElementById('progress-bar').style.width = '70%'
 
     let coffeeYes = document.getElementById('coffee-yes')
     let coffeeNo = document.getElementById('coffee-no')
@@ -235,7 +234,7 @@ function question5Amount() {
 }
 
 function question6YesNo(){
-    progressBar.style.width = '84%'
+    document.getElementById('progress-bar').style.width = '84%'
 
     let clothesYes = document.getElementById('clothes-yes')
     let clothesNo = document.getElementById('clothes-no')
@@ -248,7 +247,9 @@ function question6YesNo(){
     }
     else if (clothesNo.checked) {
         document.getElementById('clothes-yes-no-div').style.display = 'none'
+        document.getElementById('question6-clothes').style.display = 'none'
         document.getElementById('lottery-yes-no-div').style.display = 'block'
+        document.getElementById('question7-lottery').style.display = 'block'
         userData['clothes'] = false
         console.log(`Does not buy clothes`)
     }
@@ -270,12 +271,12 @@ function question6Amount() {
     // log out userData object values
     console.log(`userData object has values: ${userData}`)
 
-    question_6.style.display = 'none'
-    question_7.style.display = 'block'
+    document.getElementById('question6-clothes').style.display = 'none'
+    document.getElementById('question7-lottery').style.display = 'block'
 }
 
 function question7YesNo() {
-    progressBar.style.width = '100%'
+    document.getElementById('progress-bar').style.width = '100%'
     
     let lotteryYes = document.getElementById('lottery-yes')
     let lotteryNo = document.getElementById('lottery-no')
@@ -288,6 +289,7 @@ function question7YesNo() {
     }
     else if (lotteryNo.checked) {
         document.getElementById('lottery-yes-no-div').style.display = 'none'
+        document.getElementById('question7-lottery').style.display = 'none'
         document.getElementById('final-output').style.display = 'block'
         userData['clothes'] = false
         console.log(`Does not buy clothes`)
@@ -330,7 +332,7 @@ function question7Amount() {
 function final() {
 
     // update progressBar to 100%
-    progressBar.style.width = '100%'
+    document.getElementById('progress-bar').style.width = '100%'
 
     // unpack userData object into function-scope variables
     console.log('unpack userData')
