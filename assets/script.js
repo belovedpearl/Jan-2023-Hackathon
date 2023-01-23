@@ -145,6 +145,7 @@ function question3Amount() {
 
     document.getElementById('question3-smoke').style.display = 'none'
     document.getElementById('question4-alcohol').style.display = 'block'
+    document.getElementById('alcohol-yes-no-div').style.display = 'block'
 }
 
 function question4YesNo() {
@@ -187,6 +188,7 @@ function question4Amount() {
 
     document.getElementById('question4-alcohol').style.display = 'none'
     document.getElementById('question5-coffee').style.display = 'block'
+    document.getElementById('coffee-yes-no-div').style.display = 'block'
 }
 
 function question5YesNo() {
@@ -437,4 +439,3 @@ function final() {
 
 
 // API
-
