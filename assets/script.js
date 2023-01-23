@@ -22,8 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById('lottery-yes-no').addEventListener('click', question7YesNo);
     document.getElementById('lottery-amount-button').addEventListener('click', question7Amount);
 
-    // document.getElementById('call-function-final').addEventListener('click', final);
-    
+    document.getElementById('final-output-button').addEventListener('click', final);
 })
 
 // Global-scoped object that holds data about a user
@@ -40,7 +39,7 @@ let userData = {
     alcoholAmount: 0,
     coffee: false,
     coffeeAmount: 0,
-    clothing: false,
+    clothes: false,
     clothingAmount: 0,
     lottery: false,
     lotteryAmount: 0,
@@ -74,8 +73,10 @@ function question1() {
     
     // update userData object and log value to console
     userData['currency'] = currency
-    userData['amountToSave'] = amount
-    console.log(`userData object has values: ${userData}`)
+    userData['amountToSave'] = parseInt(amount)
+
+    console.log(`userData object has values:`)
+    console.log(userData)
 
     question_1.style.display = 'none'
     question_2.style.display = 'block'
@@ -97,7 +98,8 @@ function question2() {
     userData['time'] = time
 
     // log out userData object
-    console.log(`userData object has values: ${userData}`)
+    console.log(`userData object has values:`)
+    console.log(userData)
 
     question_2.style.display = 'none'
     question_3.style.display = 'block'
@@ -136,12 +138,13 @@ function question3Amount() {
     // if the radio is checked, push that value to the userData object
     for(count = 0; count < smokeAmount.length; count++) {
         if(smokeAmount[count].checked) {
-            let selected = smokeAmount[count].checked
-            userData['smokeAmount'] = selected
+            let selected = smokeAmount[count].value
+            userData['smokeAmount'] = parseInt(selected)
         }
     }
 
-    console.log(`userData object has values: ${userData}`)
+    console.log(`userData object has values:`)
+    console.log(userData)
 
     document.getElementById('question3-smoke').style.display = 'none'
     document.getElementById('question4-alcohol').style.display = 'block'
@@ -179,12 +182,13 @@ function question4Amount() {
     // if the radio is checked, push that value to the userData object
     for(count = 0; count < alcoholAmount.length; count++) {
         if(alcoholAmount[count].checked) {
-            let selected = alcoholAmount[count].checked
-            userData['alcoholAmount'] = selected
+            let selected = alcoholAmount[count].value
+            userData['alcoholAmount'] = parseInt(selected)
         }
     }
 
-    console.log(`userData object has values: ${userData}`)
+    console.log(`userData object has values:`)
+    console.log(userData)
 
     document.getElementById('question4-alcohol').style.display = 'none'
     document.getElementById('question5-coffee').style.display = 'block'
@@ -223,16 +227,18 @@ function question5Amount() {
     // if the radio is checked, push that value to the userData object
     for(count = 0; count < coffeeAmount.length; count++) {
         if(coffeeAmount[count].checked) {
-            let selected = coffeeAmount[count].checked
-            userData['coffeeAmount'] = selected
+            let selected = coffeeAmount[count].value
+            userData['coffeeAmount'] = parseInt(selected)
         }
     }
 
     // log out userData object values
-    console.log(`userData object has values: ${userData}`)
+    console.log(`userData object has values:`)
+    console.log(userData)
 
     document.getElementById('question5-coffee').style.display = 'none'
     document.getElementById('question6-clothes').style.display = 'block'
+    document.getElementById('clothes-yes-no-div').style.display = 'block'
 }
 
 function question6YesNo(){
@@ -265,16 +271,18 @@ function question6Amount() {
     // if the radio is checked, push that value to the userData object
     for(count = 0; count < clothingAmount.length; count++) {
         if(clothingAmount[count].checked) {
-            let selected = clothingAmount[count].checked
-            userData['clothingAmount'] = selected
+            let selected = clothingAmount[count].value
+            userData['clothingAmount'] = parseFloat(selected)
         }
     }
 
     // log out userData object values
-    console.log(`userData object has values: ${userData}`)
+    console.log(`userData object has values:`)
+    console.log(userData)
 
     document.getElementById('question6-clothes').style.display = 'none'
     document.getElementById('question7-lottery').style.display = 'block'
+    document.getElementById('lottery-yes-no-div').style.display = 'block'
 }
 
 function question7YesNo() {
@@ -294,7 +302,7 @@ function question7YesNo() {
         document.getElementById('question7-lottery').style.display = 'none'
         document.getElementById('final-output').style.display = 'block'
         userData['clothes'] = false
-        console.log(`Does not buy clothes`)
+        console.log(`Does not buy lottery tickets`)
     }
 }
 
@@ -306,16 +314,17 @@ function question7Amount() {
     // if the radio is checked, push that value to the userData object
     for(count = 0; count < lotteryAmount.length; count++) {
         if(lotteryAmount[count].checked) {
-            let selected = lotteryAmount[count].checked
-            userData['lotteryAmount'] = selected
+            let selected = lotteryAmount[count].value
+            userData['lotteryAmount'] = parseInt(selected)
         }
     }
 
     // log out userData object values
-    console.log(`userData object has values: ${userData}`)
+    console.log(`userData object has values:`)
+    console.log(userData)
 
-    question_7.style.display = 'none'
-    finalOutput.style.display = 'block'
+    document.getElementById('question7-lottery').style.display = 'none'
+    document.getElementById('final-output').style.display = 'block'
 }
 
 // Final function
@@ -341,7 +350,7 @@ function final() {
     let amountToSave = userData['amountToSave']
     let timeScale = userData['timeScale']
     let timeUnits = userData['timeUnits']
-    let currency = userDatap['currency']
+    let currency = userData['currency']
     // amounts below are currency amounts (£50), not numbers of objects (3 packs of cigarettes)
     let smokeAmount = userData['smokeAmount']
     let alcoholAmount = userData['alcoholAmount']
