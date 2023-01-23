@@ -1,9 +1,26 @@
-// Cara and Adam to code JavaScript functionality here
-
 // DOM content loaded event listener, delays activation of JS functions until DOM loaded
 document.addEventListener("DOMContentLoaded", function(){
-    let firstNextButton = document.getElementById("first-next");
-    firstNextButton.addEventListener('click', question1);
+    console.log("DOM Loaded")
+
+    document.getElementById("amount-function").addEventListener('click', question1);
+    document.getElementById('time-function').addEventListener('click', question2);
+
+    document.getElementById('smoke-yes-no').addEventListener('click', question3YesNo);
+    document.getElementById('smoke-amount-button').addEventListener('click', question3Amount);
+
+    document.getElementById('alcohol-yes-no').addEventListener('click', question4YesNo);
+    document.getElementById('alcohol-amount-button').addEventListener('click', question4Amount);
+
+    document.getElementById('coffee-yes-no').addEventListener('click', question5YesNo);
+    document.getElementById('coffee-amount-button').addEventListener('click', question5Amount);
+
+    document.getElementById('clothes-yes-no').addEventListener('click', question6YesNo);
+    document.getElementById('clothes-amount-button').addEventListener('click', question6Amount);
+
+    document.getElementById('lottery-yes-no').addEventListener('click', question7YesNo);
+    document.getElementById('lottery-amount-button').addEventListener('click', question7Amount);
+
+    document.getElementById('final-output-button').addEventListener('click', final);
 })
 
 // Global-scoped object that holds data about a user
@@ -12,312 +29,351 @@ document.addEventListener("DOMContentLoaded", function(){
 // update smoke, alcohol, etc to use Boolean True/False values instead of string values
 let userData = {
     amountToSave: 0,
-    timeScale: 0,
-    timeUnits: "months",
-    currency: "pounds",
+    time: 0,
     smoke: false,
     smokeAmount: 0,
     alcohol: false,
     alcoholAmount: 0,
     coffee: false,
     coffeeAmount: 0,
-    clothing: false,
+    clothes: false,
     clothingAmount: 0,
     lottery: false,
     lotteryAmount: 0,
 }
 
-// progress bar must not wrapped inside any question element
-// progress bar has ID of progress-bar
-// progres-bar fill is controlled by style.width
-// set style.width to various increasing percentage values
-let progressBar = document.getElementById('progress-bar').style.width
-
 // declare
-let currency = document.getElementById('currency') // grab user input of currency, will use in API
-let question1 = document.getElementById('question1-amount') // amount to save question wrapper div
-let question2 = document.getElementById('question2-time') // amount of time question wrapper div
-let question3 = document.getElementById('question3-smoke') // smoke question wrapper div
-let question4 = document.getElementById('question4-alcohol') // alcohol div wrapper
-let question5 = document.getElementById('question5-coffee') // coffee question wrapper div
-let question6 = document.getElementById('question6-clothing') // clothing question wrapper div
-let question7 = document.getElementById('question7-lottery') // lottery question wrapper div
+// let currency = document.getElementById('currency') // grab user input of currency, will use in API
+let question_1 = document.getElementById('question1-amount') // amount to save question wrapper div
+let question_2 = document.getElementById('question2-time') // amount of time question wrapper div
+let question_3 = document.getElementById('question3-smoke') // smoke question wrapper div
+let question_4 = document.getElementById('question4-alcohol') // alcohol div wrapper
+let question_5 = document.getElementById('question5-coffee') // coffee question wrapper div
+let question_6 = document.getElementById('question6-clothing') // clothing question wrapper div
+let question_7 = document.getElementById('question7-lottery') // lottery question wrapper div
 let finalOutput = document.getElementById('final-output') // final output wrapper div
-
 // question 1 - relates to wireframe question-1.png
 // question-1 HTML is displayed by default
 function question1() {
 
-    question1.style.display = 'block'
-
-    let currency = document.getElementById('currency').value //point to currency input element
+    // let currency = document.getElementById('currency').value //point to currency input element
     let amount = document.getElementById('amount').value // points to amount input element
-    
-    console.log(`currency is ${currency}`)
-    console.log(`amount is ${amount}`)
 
-    // update progress-bar length to 0%
-    progressBar = '0%'
+    if(amount <= 0) {
+        alert('Please enter an amount')
+    }
+    else {
     
-    // update userData object and log value to console
-    userData['amountToSave'] = currency
-    console.log(`userData object has values: ${userData}`)
+        console.log(`amount is ${amount}`)
 
-    // call next function
-    question2();
+        // update progress-bar length to 0%
+        document.getElementById('progress-bar').style.width = '14%'
+        
+        // update userData object and log value to console
+        userData['amountToSave'] = parseInt(amount)
+
+        console.log(`userData object has values:`)
+        console.log(userData)
+
+        question_1.style.display = 'none'
+        question_2.style.display = 'block'
+    }
 }
 
 // question 2 - relates to wireframe question-2.png
 function question2() {
-
-    // hide question1 element, show question2 element
-    question1.style.display = 'none'
-    question2.style.display = 'block'
-
+    
     // variable assignment
     let time = document.getElementById('time').value //points to time input element
-    let timeUnits = document.getElementById('time-units').value // points to time-unit input element
 
-    // log out values || Remove these in final build
-    console.log(`time value is ${time}`)
-    console.log(`units of time are ${timeUnits}`)
+    if(time <= 0 || time.length == 0) {
+        alert('Please enter a valid time')
+    } 
+    else {
 
-    // update progress-bar length to 14%
-    progressBar = '14%'
+        // log out values || Remove these in final build
+        console.log(`time value is ${time}`)
 
-    // update userData object and log value to console
-    userData['timeScale'] = time
-    userData['timeUnits'] = timeUnits
+        // update progress-bar length to 14%
+        document.getElementById('progress-bar').style.width = '28%'
 
-    // log out userData object
-    console.log(`userData object has values: ${userData}`)
+        // update userData object and log value to console
+        userData['time'] = time
 
-    // call next function
-    question3()
+        // log out userData object
+        console.log(`userData object has values:`)
+        console.log(userData)
+
+        question_2.style.display = 'none'
+        question_3.style.display = 'block'
+        document.getElementById('smoke-yes-no-div').style.display = 'block'
+    }
 }
 
-// question 3 - relates to question-3.png, grabs smoke amount
-function question3() {
-    
-    question2.style.display = 'none'
-    question3.style.display = 'block'
+function question3YesNo() {
 
-    let smokeRadioSelect = document.getElementById('smoke-radio').value
-    // here we need to see what the user has selected.
-    // by default, the "No" radio button is selected, so the amount of cigarettes radio selet form is hidden by the CSS
-    // if the user selects "Yes", the amount of cigarettes form should show
-    // radio buttons are input elements with type=radio, and can accept a value attribute, so we should be able to grab its value
-    let smokeAmountRadioForm = document.getElementById('smoke-amount')
+    let smokeYes = document.getElementById('smoke-yes')
+    let smokeNo = document.getElementById('smoke-no')
 
-    // update progress-bar length to 28%
-    progressBar = '28%'
-    
-    if (smokeRadioSelect == 'yes') {
-        smokeAmountRadioForm.style.display = 'block'
-        // block not set in stone - will need to change based on CSS design
+    if(smokeYes.checked == false && smokeNo.checked == false) {
+        alert('please select either yes or no')
+    }
+    else if (smokeYes.checked) {
+        document.getElementById('smoke-yes-no-div').style.display = 'none'
+        document.getElementById('smoke-amount-div').style.display = 'block'
         userData['smoke'] = true
         console.log(`Does smoke`)
     }
-
-    if (smokeRadioSelect == 'no' ){
-        smokeAmountRadioForm.style.display = 'none'
+    else if (smokeNo.checked) {
+        document.getElementById('smoke-yes-no-div').style.display = 'none'
+        document.getElementById('question3-smoke').style.display = 'none'
+        document.getElementById('question4-alcohol').style.display = 'block'
+        document.getElementById('alcohol-yes-no-div').style.display = 'block'
         userData['smoke'] = false
         console.log(`Does not smoke`)
     }
-    
-    // radio buttons for selecting amount of cigarettes the user smokes
-    // Would this be easier with a select element and several child option elements?
-    // easier to get value
-    // can do with radio inputs and a for loop - https://www.geeksforgeeks.org/how-to-get-value-of-selected-radio-button-using-javascript/
-    // all radio inputs must have the name attribute with the same attribute value of smoke-amount
+
+    // update progress-bar length to 28%
+    document.getElementById('progress-bar').style.width = '42%'
+}
+
+function question3Amount() {
+
     let smokeAmount = document.getElementsByName('smoke-amount') // this is a list []
 
-    // iterate over the list above
-    // if the radio is checked, push that value to the userData object
-    for(count = 0; count < smokeAmount.length; count++) {
-        if(smokeAmount[count].checked) {
-            let selected = smokeAmount[count].checked
-            userData['smokeAmount'] = selected
+    if (smokeAmount.length == 0){
+        alert('please select an option')
+    }
+    else {
+
+        // iterate over the list above
+        // if the radio is checked, push that value to the userData object
+        for(count = 0; count < smokeAmount.length; count++) {
+            if(smokeAmount[count].checked) {
+                let selected = smokeAmount[count].value
+                userData['smokeAmount'] = parseInt(selected)
+            }
         }
+
+        console.log(`userData object has values:`)
+        console.log(userData)
+
+        document.getElementById('question3-smoke').style.display = 'none'
+        document.getElementById('question4-alcohol').style.display = 'block'
+        document.getElementById('alcohol-yes-no-div').style.display = 'block'
+    }
+}
+
+function question4YesNo() {
+
+    let alcoholYes = document.getElementById('alcohol-yes')
+    let alcoholNo = document.getElementById('alcohol-no')
+
+    if(alcoholYes.checked == false && alcoholNo.checked == false) {
+        alert('please select either yes or no')
+    }
+    else if (alcoholYes.checked) {
+        document.getElementById('alcohol-yes-no-div').style.display = 'none'
+        document.getElementById('alcohol-amount-div').style.display = 'block'
+        userData['alcohol'] = true
+        console.log(`Drinks alcohol`)
+    }
+    else if (alcoholNo.checked) {
+        document.getElementById('alcohol-yes-no-div').style.display = 'none'
+        document.getElementById('question4-alcohol').style.display = 'none'
+        document.getElementById('question5-coffee').style.display = 'block'
+        document.getElementById('coffee-yes-no-div').style.display = 'block'
+        userData['alcohol'] = false
+        console.log(`Does not drink alcohol`)
     }
 
-    console.log(`userData object has values: ${userData}`)
-
-    question4()
+    document.getElementById('progress-bar').style.width = '56%'
 }
 
 // question4 - relates to question-4.png
-function question4() {
-    // very similar approach to question 3
-
-    // hide question 3 element, show question 4 element
-    question3.style.display = 'none'
-    question4.style.display = 'block'
-    
-    // variable assignment
-    let alcoholRadioSelect = document.getElementById('alcohol-radio') // alcohol yes-no radio select
-    let alcoholAmountRadioForm = document.getElementById('alcohol-amount') // alcohol amount radio buttons in fieldset
-
-    // update progress-bar length to 42%
-    progressBar = '42%'
-
-    if (alcoholRadioSelect == 'yes') {
-        alcoholAmountRadioForm.style.display = 'block'
-        // block not set in stone - will need to change based on CSS design
-        userData['alcohol'] = true
-        console.log(`Drinks`)
-    }
-
-    if (alcoholRadioSelect == 'no' ){
-        alcoholAmountRadioForm.style.display = 'none'
-        userData['alcohol'] = false
-        console.log(`Filthy teetotaler`)
-    }
+function question4Amount() {
 
     let alcoholAmount = document.getElementsByName('alcohol-amount')
 
-    // iterate over the list above
-    // if the radio is checked, push that value to the userData object
-    for(count = 0; count < alcoholAmount.length; count++) {
-        if(alcoholAmount[count].checked) {
-            let selected = alcoholAmount[count].checked
-            userData['alcoholAmount'] = selected
-        }
+    if (alcoholAmount.length == 0){
+        alert('please select an option')
     }
+    else {
 
-    alcohol.style.display = 'none'
+        // iterate over the list above
+        // if the radio is checked, push that value to the userData object
+        for(count = 0; count < alcoholAmount.length; count++) {
+            if(alcoholAmount[count].checked) {
+                let selected = alcoholAmount[count].value
+                userData['alcoholAmount'] = parseInt(selected)
+            }
+        }
 
-    console.log(`userData object has values: ${userData}`)
+        console.log(`userData object has values:`)
+        console.log(userData)
 
-    question5()
+        document.getElementById('question4-alcohol').style.display = 'none'
+        document.getElementById('question5-coffee').style.display = 'block'
+        document.getElementById('coffee-yes-no-div').style.display = 'block'
+    }
+}
+
+function question5YesNo() {
+    
+    let coffeeYes = document.getElementById('coffee-yes')
+    let coffeeNo = document.getElementById('coffee-no')
+
+    if(coffeeYes.checked == false && coffeeNo.checked == false) {
+        alert('please select either yes or no')
+    }
+    else if (coffeeYes.checked) {
+        document.getElementById('coffee-yes-no-div').style.display = 'none'
+        document.getElementById('coffee-amount-div').style.display = 'block'
+        userData['coffee'] = true
+        console.log(`Drinks coffee`)
+    }
+    else if (coffeeNo.checked) {
+        document.getElementById('coffee-yes-no-div').style.display = 'none'
+        document.getElementById('question5-coffee').style.display = 'none'
+        document.getElementById('clothes-yes-no-div').style.display = 'block'
+        document.getElementById('question6-clothes').style.display = 'block'
+        userData['coffee'] = false
+        console.log(`Does not drink coffee`)
+    }
+    document.getElementById('progress-bar').style.width = '70%'
 }
 
 // question 5 - relates to question-5.png
 // coffee is a placeholder for a hot drink - tea, hot chocolate, etc
-function question5() {
-    // hide question 4 element, show question 5 element
-    question4.style.display = 'none'
-    question5.style.display = 'block'
-
-    // variable assignment
-    let coffeeRadioSelect = document.getElementById('coffee-radio') // coffee yes-no radio selector
-    let coffeeAmountRadioForm = document.getElementById('coffee-amount')
-
-    // update progressBar to 56%
-    progressBar = '56%'
-
-    if (coffeeRadioSelect == 'yes') {
-        coffeeAmountRadioForm.style.display = 'block'
-        // block not set in stone - will need to change based on CSS design
-        userData['coffee'] = true
-        console.log(`Drinks coffee`)
-    }
-
-    if (coffeeRadioSelect == 'no'){
-        coffeeAmountRadioForm.style.display = 'none'
-        userData['coffee'] = false
-        console.log(`does not drink coffee`)
-    }
+function question5Amount() {
 
     let coffeeAmount = document.getElementsByName('coffee-amount')
 
-    // iterate over the list above
-    // if the radio is checked, push that value to the userData object
-    for(count = 0; count < coffeeAmount.length; count++) {
-        if(coffeeAmount[count].checked) {
-            let selected = coffeeAmount[count].checked
-            userData['coffeeAmount'] = selected
-        }
+    if (coffeeAmount.length == 0){
+        alert('please select an option')
     }
+    else {
+        // iterate over the list above
+        // if the radio is checked, push that value to the userData object
+        for(count = 0; count < coffeeAmount.length; count++) {
+            if(coffeeAmount[count].checked) {
+                let selected = coffeeAmount[count].value
+                userData['coffeeAmount'] = parseInt(selected)
+            }
+        }
 
-    // log out userData object values
-    console.log(`userData object has values: ${userData}`)
+        // log out userData object values
+        console.log(`userData object has values:`)
+        console.log(userData)
 
-    question6()
+        document.getElementById('question5-coffee').style.display = 'none'
+        document.getElementById('question6-clothes').style.display = 'block'
+        document.getElementById('clothes-yes-no-div').style.display = 'block'
+    }
 }
 
-function queston6() {
-    // hide question 5 element, show question 6 element
-    question5.style.display = 'none'
-    question6.style.display = 'block'
+function question6YesNo(){
+    
 
-    // variable assignment
-    let clothingRadioSelect = document.getElementById('clothing-radio') // coffee yes-no radio selector
-    let clothingAmountRadioForm = document.getElementById('clothing-amount')
+    let clothesYes = document.getElementById('clothes-yes')
+    let clothesNo = document.getElementById('clothes-no')
 
-    // update progressBar to 70%
-    progressBar = '70%'
-
-    if (clothingRadioSelect == 'yes') {
-        clothingAmountRadioForm.style.display = 'block'
-        // block not set in stone - will need to change based on CSS design
-        userData['clothing'] = true
-        console.log(`buys clothes`)
+    if(clothesYes.checked == false && clothesNo.checked == false) {
+        alert('please select either yes or no')
+    }
+    else if (clothesYes.checked) {
+        document.getElementById('clothes-yes-no-div').style.display = 'none'
+        document.getElementById('clothes-amount-div').style.display = 'block'
+        userData['clothes'] = true
+        console.log(`Buys clothes`)
+    }
+    else if (clothesNo.checked) {
+        document.getElementById('clothes-yes-no-div').style.display = 'none'
+        document.getElementById('question6-clothes').style.display = 'none'
+        document.getElementById('lottery-yes-no-div').style.display = 'block'
+        document.getElementById('question7-lottery').style.display = 'block'
+        userData['clothes'] = false
+        console.log(`Does not buy clothes`)
     }
 
-    if (clothingRadioSelect == 'no'){
-        clothingAmountRadioForm.style.display = 'none'
-        userData['clothing'] = false
-        console.log(`does not buy clothes`)
-    }
-
-    let clothingAmount = document.getElementsByName('clothing-amount')
-
-    // iterate over the list above
-    // if the radio is checked, push that value to the userData object
-    for(count = 0; count < clothingAmount.length; count++) {
-        if(clothingAmount[count].checked) {
-            let selected = clothingAmount[count].checked
-            userData['clothingAmount'] = selected
-        }
-    }
-
-    // log out userData object values
-    console.log(`userData object has values: ${userData}`)
-
-    question7()
+    document.getElementById('progress-bar').style.width = '84%'
 }
 
-function question7() {
-    // hide question 6 element, show question 7 element
-    question6.style.display = 'none'
-    question7.style.display = 'block'
+function question6Amount() {
 
-    // variable assignment
-    let lotteryRadioSelect = document.getElementById('lottery-radio') // lottery yes-no radio selector
-    let lotteryAmountRadioForm = document.getElementById('lottery-amount')
+    let clothingAmount = document.getElementsByName('clothes-amount')
 
-    // update progressBar to 84%
-    progressBar = '84%'
+    if (clothingAmount.length == 0){
+        alert('please select an option')
+    }
+    else {
+        // iterate over the list above
+        // if the radio is checked, push that value to the userData object
+        for(count = 0; count < clothingAmount.length; count++) {
+            if(clothingAmount[count].checked) {
+                let selected = clothingAmount[count].value
+                userData['clothingAmount'] = parseFloat(selected)
+            }
+        }
 
-    if (lotteryRadioSelect == 'yes') {
-        lotteryAmountRadioForm.style.display = 'block'
-        // block not set in stone - will need to change based on CSS design
+        // log out userData object values
+        console.log(`userData object has values:`)
+        console.log(userData)
+
+        document.getElementById('question6-clothes').style.display = 'none'
+        document.getElementById('question7-lottery').style.display = 'block'
+        document.getElementById('lottery-yes-no-div').style.display = 'block'
+    }
+}
+
+function question7YesNo() {
+    
+    let lotteryYes = document.getElementById('lottery-yes')
+    let lotteryNo = document.getElementById('lottery-no')
+
+    if(lotteryYes.checked == false && lotteryNo.checked == false) {
+        alert('please select either yes or no')
+    }
+    else if (lotteryYes.checked) {
+        document.getElementById('lottery-yes-no-div').style.display = 'none'
+        document.getElementById('lottery-amount-div').style.display = 'block'
         userData['lottery'] = true
-        console.log(`buys lottery tickets`)
+        console.log(`Buys lottery tickets`)
     }
+    else if (lotteryNo.checked) {
+        document.getElementById('lottery-yes-no-div').style.display = 'none'
+        document.getElementById('question7-lottery').style.display = 'none'
+        document.getElementById('final-output').style.display = 'block'
+        userData['clothes'] = false
+        console.log(`Does not buy lottery tickets`)
+    }
+    document.getElementById('progress-bar').style.width = '100%'
+}
 
-    if (lotteryRadioSelect == 'no'){
-        lotteryAmountRadioForm.style.display = 'none'
-        userData['lottery'] = false
-        console.log(`does not buy clothes`)
-    }
+function question7Amount() {
 
     let lotteryAmount = document.getElementsByName('lottery-amount')
 
-    // iterate over the list above
-    // if the radio is checked, push that value to the userData object
-    for(count = 0; count < lotteryAmount.length; count++) {
-        if(lotteryAmount[count].checked) {
-            let selected = lotteryAmount[count].checked
-            userData['lotteryAmount'] = selected
-        }
+    if (lotteryAmount.length == 0){
+        alert('please select an option')
     }
+    else {
+        // iterate over the list above
+        // if the radio is checked, push that value to the userData object
+        for(count = 0; count < lotteryAmount.length; count++) {
+            if(lotteryAmount[count].checked) {
+                let selected = lotteryAmount[count].value
+                userData['lotteryAmount'] = parseInt(selected)
+            }
+        }
 
-    // log out userData object values
-    console.log(`userData object has values: ${userData}`)
+        // log out userData object values
+        console.log(`userData object has values:`)
+        console.log(userData)
 
-    final()
+        document.getElementById('question7-lottery').style.display = 'none'
+        document.getElementById('final-output').style.display = 'block'
+    }
 }
 
 // Final function
@@ -335,19 +391,13 @@ function question7() {
 
 function final() {
 
-    // hide question 7 element, show final output
-    question7.style.display = 'none'
-    finalOutput.style.display = 'block'
-
     // update progressBar to 100%
-    progressBar = '100%'
+    document.getElementById('progress-bar').style.width = '100%'
 
     // unpack userData object into function-scope variables
     console.log('unpack userData')
     let amountToSave = userData['amountToSave']
-    let timeScale = userData['timeScale']
-    let timeUnits = userData['timeUnits']
-    let currency = userDatap['currency']
+    let time = userData['time']
     // amounts below are currency amounts (£50), not numbers of objects (3 packs of cigarettes)
     let smokeAmount = userData['smokeAmount']
     let alcoholAmount = userData['alcoholAmount']
@@ -381,35 +431,39 @@ function final() {
 
     // pretty sure this needs the inputs of costs of packs of cigarettes, shopping trips, etc
     if (smoke == true) {
-        let packsToGiveUp = (smokeAmount / smokePrice) * timeScale
+        console.log(`smokeAmount: ${smokeAmount}`)
+        console.log(`smokePrice: ${smokePrice}`)
+        console.log(`time: ${time}`)
+
+        let packsToGiveUp = (smokeAmount / smokePrice) * time
         active_elements.push(packsToGiveUp)
         strings.push("packs of cigarettes") // can change this to whatever unit we decide works best
         console.log(`user must give up ${packsToGiveUp} packs of cigarettes`)
     }
 
     if (alcohol == true) {
-        let alcoholicDrinksToGiveUp = (alcoholAmount / alcoholPrice) * timeScale
+        let alcoholicDrinksToGiveUp = (alcoholAmount / alcoholPrice) * time
         active_elements.push(alcoholicDrinksToGiveUp)
         strings.push("akcoholic drinks")
         console.log(`The user must give up ${alcoholicDrinksToGiveUp} alcoholic drinks`)
     }
 
     if (coffee == true) {
-        let coffeeToGiveUp = (coffeeAmount / coffeePrice) * timeScale
+        let coffeeToGiveUp = (coffeeAmount / coffeePrice) * time
         active_elements.push(coffeeToGiveUp)
         strings.push("cups of coffee")
         console.log(`user must give up ${coffeeToGiveUp} cups of coffee`)
     }
 
     if (clothing == true) {
-        let clothingToGiveUp = (clothingAmount / clothingPrice) * timeScale
+        let clothingToGiveUp = (clothingAmount / clothingPrice) * time
         active_elements.push(clothingToGiveUp)
         strings.push("shopping trips")
         console.log(`user must give up ${clothingToGiveUp} shopping trips`)
     }
 
     if (lottery == true) {
-        let lotteryToGiveUp = (lotteryAmount / lotteryPrice) * timeScale
+        let lotteryToGiveUp = (lotteryAmount / lotteryPrice) * time
         active_elements.push(lotteryToGiveUp)
         strings.push("lottery tickets")
         console.log(`user must give up ${lotteryToGiveUp} lottery tickets`)
@@ -428,7 +482,8 @@ function final() {
 
     //get a random number between 0 and and the integer length of the array
     // so between 0 and 3 if the array is 3 elements long
-    random = Math.floor(Math.random() * length) + 1
+    random = Math.floor(Math.random() * length)
+    console.log(random)
     // between 1 and 5 if user smokes, drinks, coffees, shops and lotterys
 
     // use the random number to get an associated random index of the active_elements array
@@ -439,6 +494,12 @@ function final() {
     // ergo, same length means that random can be used to index both and get the same element
 
     // this is where we push the suggested number of things to give up to the user
-    finalOutput.innerText = `The Penny Smart tool recommends that you give up ${suggestion} ${suggestion_string} for ${timeScale} ${timeUnits} to save ${amountToSave} ${currency}`
+    if(length == 0) {
+        finalOutput.innerText = `You're pretty frugal! The Penny Smart Tool can't find you any savings.`
+    }
+    else {
+        finalOutput.innerText = `The Penny Smart tool recommends that you give up ${Math.ceil(suggestion)} ${suggestion_string} for ${time} weeks to save £${amountToSave}`
+    }
+
     // this should inject "The Penny Smart tool recommends that you give up 10 fewer cups of coffee over 5 weeks to save 50 pounds"
 }
