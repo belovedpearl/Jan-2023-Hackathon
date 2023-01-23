@@ -163,8 +163,8 @@ function question4YesNo() {
     else if (alcoholNo.checked) {
         document.getElementById('alcohol-yes-no-div').style.display = 'none'
         document.getElementById('question4-alcohol').style.display = 'none'
-        document.getElementById('coffee-yes-no-div').style.display = 'block'
         document.getElementById('question5-coffee').style.display = 'block'
+        document.getElementById('coffee-yes-no-div').style.display = 'block'
         userData['alcohol'] = false
         console.log(`Does not drink alcohol`)
     }
