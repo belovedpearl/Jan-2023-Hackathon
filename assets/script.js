@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function(){
 let userData = {
     amountToSave: 0,
     time: 0,
-    currency: "pounds",
     smoke: false,
     smokeAmount: 0,
     alcohol: false,
@@ -46,7 +45,7 @@ let userData = {
 }
 
 // declare
-let currency = document.getElementById('currency') // grab user input of currency, will use in API
+// let currency = document.getElementById('currency') // grab user input of currency, will use in API
 let question_1 = document.getElementById('question1-amount') // amount to save question wrapper div
 let question_2 = document.getElementById('question2-time') // amount of time question wrapper div
 let question_3 = document.getElementById('question3-smoke') // smoke question wrapper div
@@ -59,25 +58,20 @@ let finalOutput = document.getElementById('final-output') // final output wrappe
 // question-1 HTML is displayed by default
 function question1() {
 
-    let currency = document.getElementById('currency').value //point to currency input element
+    // let currency = document.getElementById('currency').value //point to currency input element
     let amount = document.getElementById('amount').value // points to amount input element
 
-    if(currency == 'disabled') {
-        alert('Please enter a currency')
-    }
-    else if(amount == 0) {
+    if(amount == 0) {
         alert('Please enter an amount')
     }
     else {
     
-        console.log(`currency is ${currency}`)
         console.log(`amount is ${amount}`)
 
         // update progress-bar length to 0%
         document.getElementById('progress-bar').style.width = '14%'
         
         // update userData object and log value to console
-        userData['currency'] = currency
         userData['amountToSave'] = parseInt(amount)
 
         console.log(`userData object has values:`)
@@ -405,9 +399,7 @@ function final() {
     // unpack userData object into function-scope variables
     console.log('unpack userData')
     let amountToSave = userData['amountToSave']
-    let timeScale = userData['timeScale']
-    let timeUnits = userData['timeUnits']
-    let currency = userData['currency']
+    let time = userData['time']
     // amounts below are currency amounts (£50), not numbers of objects (3 packs of cigarettes)
     let smokeAmount = userData['smokeAmount']
     let alcoholAmount = userData['alcoholAmount']
@@ -441,35 +433,39 @@ function final() {
 
     // pretty sure this needs the inputs of costs of packs of cigarettes, shopping trips, etc
     if (smoke == true) {
-        let packsToGiveUp = (smokeAmount / smokePrice) * timeScale
+        console.log(`smokeAmount: ${smokeAmount}`)
+        console.log(`smokePrice: ${smokePrice}`)
+        console.log(`time: ${time}`)
+
+        let packsToGiveUp = (smokeAmount / smokePrice) * time
         active_elements.push(packsToGiveUp)
         strings.push("packs of cigarettes") // can change this to whatever unit we decide works best
         console.log(`user must give up ${packsToGiveUp} packs of cigarettes`)
     }
 
     if (alcohol == true) {
-        let alcoholicDrinksToGiveUp = (alcoholAmount / alcoholPrice) * timeScale
+        let alcoholicDrinksToGiveUp = (alcoholAmount / alcoholPrice) * time
         active_elements.push(alcoholicDrinksToGiveUp)
         strings.push("akcoholic drinks")
         console.log(`The user must give up ${alcoholicDrinksToGiveUp} alcoholic drinks`)
     }
 
     if (coffee == true) {
-        let coffeeToGiveUp = (coffeeAmount / coffeePrice) * timeScale
+        let coffeeToGiveUp = (coffeeAmount / coffeePrice) * time
         active_elements.push(coffeeToGiveUp)
         strings.push("cups of coffee")
         console.log(`user must give up ${coffeeToGiveUp} cups of coffee`)
     }
 
     if (clothing == true) {
-        let clothingToGiveUp = (clothingAmount / clothingPrice) * timeScale
+        let clothingToGiveUp = (clothingAmount / clothingPrice) * time
         active_elements.push(clothingToGiveUp)
         strings.push("shopping trips")
         console.log(`user must give up ${clothingToGiveUp} shopping trips`)
     }
 
     if (lottery == true) {
-        let lotteryToGiveUp = (lotteryAmount / lotteryPrice) * timeScale
+        let lotteryToGiveUp = (lotteryAmount / lotteryPrice) * time
         active_elements.push(lotteryToGiveUp)
         strings.push("lottery tickets")
         console.log(`user must give up ${lotteryToGiveUp} lottery tickets`)
@@ -503,11 +499,8 @@ function final() {
         finalOutput.innerText = `You're pretty frugal! The Penny Smart Tool can't find you any savings.`
     }
     else {
-        finalOutput.innerText = `The Penny Smart tool recommends that you give up ${suggestion} ${suggestion_string} for ${timeScale} ${timeUnits} to save ${amountToSave} ${currency}`
+        finalOutput.innerText = `The Penny Smart tool recommends that you give up ${suggestion} ${suggestion_string} for ${time} weeks to save £${amountToSave}`
     }
 
     // this should inject "The Penny Smart tool recommends that you give up 10 fewer cups of coffee over 5 weeks to save 50 pounds"
 }
-
-
-// API
