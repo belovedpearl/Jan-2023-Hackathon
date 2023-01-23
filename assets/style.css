@@ -5,13 +5,7 @@
     font-family: 'Poppins', sans-serif;
 }
 
-/* 
-#main-container {
-    width: 40%;
-} */
-
 .nav-bar {
-    /*background-color: #8BD7D2;*/
     display: flex;
     width: 100%;
     justify-content: center;
@@ -22,13 +16,6 @@
     width: 320px;
     display: flex;
 }  
-  
-.brand-name {
-    /* font-family: Montserrat, sans-serif; */
-    text-align: center;
-    justify-content: center;
-    width: 100%;
-}
 
 body{
     display: flex;
@@ -159,10 +146,10 @@ body{
     background-color: #49C6E5;
     padding: 1rem;
     color: #FFFBFA;
-    margin-top: 5rem;
+    margin-top: 2rem;
 }
 
-.team-b {
+.team-8 {
     text-align: center;
 }
 
