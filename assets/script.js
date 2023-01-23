@@ -1,5 +1,3 @@
-// Cara and Adam to code JavaScript functionality here
-
 // DOM content loaded event listener, delays activation of JS functions until DOM loaded
 document.addEventListener("DOMContentLoaded", function(){
     console.log("DOM Loaded")
@@ -88,9 +86,9 @@ function question2() {
     // variable assignment
     let time = document.getElementById('time').value //points to time input element
 
-    if(time == 0 || time.length == 0) {
+    if(time <= 0 || time.length == 0) {
         alert('Please enter a valid time')
-    }
+    } 
     else {
 
         // log out values || Remove these in final build

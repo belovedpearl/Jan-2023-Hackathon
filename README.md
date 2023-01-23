@@ -222,7 +222,7 @@ The landing page will ask the user how much money they would like to save and a 
 ## Credits
 ---
 
-* **TEAM - BROKE BUSTER!**
+* **TEAM - THE BROKE BUSTERS!**
 
 * Scrum Master
 
