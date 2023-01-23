@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function(){
     document.getElementById('lottery-yes-no').addEventListener('click', question7YesNo);
     document.getElementById('lottery-amount-button').addEventListener('click', question7Amount);
 
-    document.getElementById('call-function-final').addEventListener('click', final);
+    // document.getElementById('call-function-final').addEventListener('click', final);
     
 })
 
@@ -121,6 +121,8 @@ function question3YesNo() {
     }
     else if (smokeNo.checked) {
         document.getElementById('smoke-yes-no-div').style.display = 'none'
+        document.getElementById('question3-smoke').style.display = 'none'
+        document.getElementById('question4-alcohol').style.display = 'block'
         document.getElementById('alcohol-yes-no-div').style.display = 'block'
         userData['smoke'] = false
         console.log(`Does not smoke`)
@@ -142,8 +144,8 @@ function question3Amount() {
 
     console.log(`userData object has values: ${userData}`)
 
-    question_3.style.display = 'none'
-    question_4.style.display = 'block'
+    document.getElementById('question3-smoke').style.display = 'none'
+    document.getElementById('question4-alcohol').style.display = 'block'
 }
 
 function question4YesNo() {
@@ -160,7 +162,9 @@ function question4YesNo() {
     }
     else if (alcoholNo.checked) {
         document.getElementById('alcohol-yes-no-div').style.display = 'none'
+        document.getElementById('question4-alcohol').style.display = 'none'
         document.getElementById('coffee-yes-no-div').style.display = 'block'
+        document.getElementById('question5-coffee').style.display = 'block'
         userData['alcohol'] = false
         console.log(`Does not drink alcohol`)
     }
@@ -182,8 +186,8 @@ function question4Amount() {
 
     console.log(`userData object has values: ${userData}`)
 
-    question_4.style.display = 'none'
-    question_5.style.display = 'block'
+    document.getElementById('question4-alcohol').style.display = 'none'
+    document.getElementById('question5-coffee').style.display = 'block'
 }
 
 function question5YesNo() {
@@ -200,7 +204,9 @@ function question5YesNo() {
     }
     else if (coffeeNo.checked) {
         document.getElementById('coffee-yes-no-div').style.display = 'none'
+        document.getElementById('question5-coffee').style.display = 'none'
         document.getElementById('clothes-yes-no-div').style.display = 'block'
+        document.getElementById('question6-clothes').style.display = 'block'
         userData['coffee'] = false
         console.log(`Does not drink coffee`)
     }
@@ -224,8 +230,8 @@ function question5Amount() {
     // log out userData object values
     console.log(`userData object has values: ${userData}`)
 
-    question_5.style.display = 'none'
-    question_6.style.display = 'block'
+    document.getElementById('question5-coffee').style.display = 'none'
+    document.getElementById('question6-clothes').style.display = 'block'
 }
 
 function question6YesNo(){
